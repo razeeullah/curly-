@@ -1,0 +1,14 @@
+.admin-state/
+__pycache__/
+*.pyc
+output/
+.playwright-cli/
+archive/public-site.zip
+archive/*.zip
+.env
+.env.*
+!.env.example
+.DS_Store
+node_modules/
+.venv/
+*.log

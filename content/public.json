@@ -1,0 +1,84 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Behind the frame",
+      "type": "Brand film",
+      "category": "commercial",
+      "src": "assets/hero-v2.webp",
+      "alt": "AI-generated illustrative cinema camera and crew on a warmly lit soundstage",
+      "crop": "52% 45%",
+      "copy": "A production-led visual concept emphasising the craft behind commercial storytelling \u2014 the set, the light and the people who build the frame.",
+      "illustrative": true
+    },
+    {
+      "id": 0,
+      "title": "The human story",
+      "type": "Film & drama",
+      "category": "film",
+      "src": "assets/portrait-v2.webp",
+      "alt": "AI-generated illustrative portrait of a fictional actor in soft window light",
+      "crop": "58% 42%",
+      "copy": "An atmospheric narrative concept built around human connection, tension and quiet emotion. A study in performance-led storytelling.",
+      "illustrative": true
+    },
+    {
+      "id": 2,
+      "title": "Beyond the ordinary",
+      "type": "Visual craft",
+      "category": "visual",
+      "src": "assets/landscape-v2.webp",
+      "alt": "AI-generated illustrative traveler on a rocky ridge before snowy mountains",
+      "crop": "52% 45%",
+      "copy": "A landscape-driven visual concept exploring scale, atmosphere and the extraordinary \u2014 cinema that places a person inside the world.",
+      "illustrative": true
+    },
+    {
+      "id": 3,
+      "title": "Made on set",
+      "type": "Film production",
+      "category": "film",
+      "src": "assets/stage-v2.webp",
+      "alt": "AI-generated illustrative crew filming an interior soundstage scene",
+      "crop": "48% 45%",
+      "copy": "A behind-the-scenes concept centred on collaboration and the filmmaking process, from the first mark on the floor to the final take.",
+      "illustrative": true
+    }
+  ],
+  "posts": [],
+  "settings": {
+    "siteUrl": "https://skfilmsproductions.com",
+    "homeTitle": "SK Films Productions | Film & Commercial Production",
+    "homeDescription": "Film, commercial and visual production for Pakistan and Dubai. Explore SK Films Productions\u2019 films, CGI/VFX, animation and branded content.",
+    "offices": [
+      {
+        "city": "Islamabad",
+        "address": "Office 304, 3rd Floor, Kohsar Plaza, 131 Main Boulevard, Faisal Margalla City, B-17, Islamabad 44000, Pakistan",
+        "mapUrl": "https://maps.app.goo.gl/ine7izpesokFrH8E9",
+        "embedUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3320.1939384798443!2d72.8164804!3d33.6780421!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbd5123f1eb79%3A0x511a028f4cce6854!2sSK%20Films%20Productions!5e0!3m2!1sen!2s!4v1795779633501!5m2!1sen!2s",
+        "approved": true
+      },
+      {
+        "city": "Lahore",
+        "address": "",
+        "mapUrl": "",
+        "embedUrl": "",
+        "approved": false
+      },
+      {
+        "city": "Dubai",
+        "address": "",
+        "mapUrl": "",
+        "embedUrl": "",
+        "approved": false
+      },
+      {
+        "city": "Australia",
+        "address": "",
+        "mapUrl": "",
+        "embedUrl": "",
+        "approved": false
+      }
+    ]
+  }
+}

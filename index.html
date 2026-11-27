@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#FAF9F6">
+<meta name="description" content="Film, commercial and visual production for Pakistan and Dubai. Explore SK Films Productions’ films, CGI/VFX, animation and branded content.">
+<title>SK Films Productions | Film &amp; Commercial Production</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="preload" href="assets/fonts/InterTight-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/JetBrainsMono-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/hero-v2.webp" as="image" fetchpriority="high">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="motion.css">
+<link rel="stylesheet" href="cinema.css">
+<link rel="stylesheet" href="light.css">
+<link rel="stylesheet" href="experience.css">
+<link rel="stylesheet" href="insights.css">
+<script src="assets/vendor/gsap.min.js" defer></script>
+<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="script.js" defer></script>
+<script src="motion.js" defer></script>
+<!-- SEO START --><meta property="og:type" content="website"><meta property="og:title" content="SK Films Productions | Film &amp; Commercial Production"><meta property="og:description" content="Film, commercial and visual production for Pakistan and Dubai. Explore SK Films Productions’ films, CGI/VFX, animation and branded content."><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://skfilmsproductions.com/"><meta property="og:url" content="https://skfilmsproductions.com/"><meta property="og:image" content="https://skfilmsproductions.com/assets/hero-v2.webp"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "SK Films Productions", "url": "https://skfilmsproductions.com", "logo": "https://skfilmsproductions.com/assets/logo.png"}</script><!-- SEO END --></head>
+<body class="no-intro">
+<a class="skip" href="#main">Skip to content</a>
+<noscript><p class="no-script-film"><a href="assets/sk-films-ident.mp4">Watch the SK Films opening film</a></p></noscript>
+
+<svg class="sprite" aria-hidden="true" focusable="false"><defs>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 4.5v15l12.5-7.5z" fill="currentColor"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M12.5 5.5 19 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="i-arrow-ne" viewBox="0 0 24 24"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 4h6v6H4zm10 0h6v6h-6zM4 14h6v6H4zm10 0h6v6h-6z" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
+</defs></svg>
+
+<!-- ─────────── Opening film ─────────── -->
+<dialog id="intro" class="intro" aria-labelledby="introTitle">
+  <h2 id="introTitle" class="sr-only">SK Films opening ident</h2>
+  <video id="opening" playsinline muted preload="none" poster="assets/intro-poster.jpg"></video>
+  <div class="intro-frame" aria-hidden="true"></div>
+  <div class="intro-top">
+    <span class="label">SK Films <i>/</i> Opening ident</span>
+    <button class="btn-ghost" id="skipIntro" type="button">Skip <svg><use href="#i-arrow"/></svg></button>
+  </div>
+  <div class="intro-center" id="introFallback" hidden>
+    <button class="btn-txt" id="introPlay" type="button"><svg><use href="#i-play"/></svg> Play the opening film</button>
+    <button class="btn-txt" id="introEnter" type="button">Enter the site <svg><use href="#i-arrow"/></svg></button>
+  </div>
+  <div class="intro-bottom">
+    <span class="timecode" id="introTime">00:00<span id="introDuration"> / —</span></span>
+    <div class="intro-progress"><i id="progressFill"></i></div>
+    <button class="btn-ghost" id="sound" type="button" aria-pressed="false">Sound off</button>
+  </div>
+</dialog>
+
+<!-- ─────────── Header ─────────── -->
+<header class="header" id="top">
+  <a href="#top" class="logo" aria-label="SK Films Productions — home"><img src="assets/logo.png" width="400" height="367" alt=""></a>
+  <nav class="header-nav" aria-label="Main">
+    <a href="#work"><span>01</span>Work</a>
+    <a href="#studio"><span>02</span>Studio</a>
+    <a href="services.html"><span>03</span>Services</a>
+    <a href="insights.html">Insights</a>
+    <a href="#contact"><span>04</span>Contact</a>
+  </nav>
+  <a href="#contact" class="header-cta magnetic" data-magnet="0.3">Start a project <svg><use href="#i-arrow-ne"/></svg></a>
+  <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteMenu">
+    <span class="menu-toggle-label">Menu</span><span class="menu-toggle-icon" aria-hidden="true"><i></i><i></i></span>
+  </button>
+</header>
+
+<!-- ─────────── Fullscreen menu (all breakpoints) ─────────── -->
+<div class="site-menu" id="siteMenu" role="dialog" aria-modal="true" aria-label="Site menu" hidden>
+  <div class="site-menu-head">
+    <span class="label">SK Films / Index</span>
+    <button class="btn-ghost" id="menuClose" type="button">Close <span aria-hidden="true">×</span></button>
+  </div>
+  <nav class="site-menu-nav" aria-label="Site">
+    <a href="#work"><sup>01</sup><span>Work</span><em>The archive</em></a>
+    <a href="#studio"><sup>02</sup><span>Studio</span><em>Point of view</em></a>
+    <a href="services.html"><sup>03</sup><span>Services</span><em>What we make</em></a>
+    <a href="#about"><sup>04</sup><span>About</span><em>A way of seeing</em></a>
+    <a href="#process"><sup>05</sup><span>Process</span><em>Idea to frame</em></a>
+    <a href="insights.html"><sup>06</sup><span>Insights</span><em>Studio notes</em></a>
+    <a href="#contact"><sup>07</sup><span>Contact</span><em>Begin a film</em></a>
+  </nav>
+  <div class="site-menu-foot">
+    <span class="label">Bringing stories to life</span>
+    <span class="label">Film / Commercial / Visual craft</span>
+  </div>
+</div>
+
+<main id="main">
+<section class="hero" id="hero" aria-labelledby="heroTitle" data-mood="hero" data-bg="#FAF9F6" data-text="#1C1C1C" data-label="Opening">
+ <div class="hero-screen">
+  <div class="hero-stage layer-bg" aria-hidden="true"><img src="assets/hero-v2.webp" width="1536" height="1024" alt=""></div>
+  <div class="hero-panels layer-mid"><div class="chapter-rail" role="group" aria-label="Cinematic frame selector"><button class="chapter is-active" type="button" data-chapter="0" aria-pressed="true" aria-label="Select Behind the frame">
+ <span class="chapter-bg"><img src="assets/hero-v2.webp" alt="" fetchpriority="high"></span><span class="chapter-shade"></span>
+ <span class="chapter-collapsed">Behind the frame</span><span class="chapter-content"><span class="chapter-num">01 / Concept frame</span><strong>Behind the frame</strong><span class="chapter-desc">Commercial / brand film</span></span>
+ </button><button class="chapter" type="button" data-chapter="1" aria-pressed="false" aria-label="Select The human story">
+ <span class="chapter-bg"><img src="assets/portrait-v2.webp" alt="" decoding="async"></span><span class="chapter-shade"></span>
+ <span class="chapter-collapsed">The human story</span><span class="chapter-content"><span class="chapter-num">02 / Concept frame</span><strong>The human story</strong><span class="chapter-desc">Film & drama</span></span>
+ </button><button class="chapter" type="button" data-chapter="2" aria-pressed="false" aria-label="Select Beyond the ordinary">
+ <span class="chapter-bg"><img src="assets/landscape-v2.webp" alt="" decoding="async"></span><span class="chapter-shade"></span>
+ <span class="chapter-collapsed">Beyond the ordinary</span><span class="chapter-content"><span class="chapter-num">03 / Concept frame</span><strong>Beyond the ordinary</strong><span class="chapter-desc">Visual craft</span></span>
+ </button><button class="chapter" type="button" data-chapter="3" aria-pressed="false" aria-label="Select Made on set">
+ <span class="chapter-bg"><img src="assets/stage-v2.webp" alt="" decoding="async"></span><span class="chapter-shade"></span>
+ <span class="chapter-collapsed">Made on set</span><span class="chapter-content"><span class="chapter-num">04 / Concept frame</span><strong>Made on set</strong><span class="chapter-desc">Film production</span></span>
+ </button></div></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-meta"><span>Independent production studio</span><span>Film. Commercial. Visual craft.</span></div>
+  <p class="hero-count" aria-label="Selected frame"><span class="sr-only" id="frameAnnounce" aria-live="polite">Frame 1 of 4</span><span aria-hidden="true" id="chapterCount" data-glitch="01">01</span><span class="hero-count-sep">/</span><span>04</span></p>
+  <div class="hero-body layer-fg"><h1 id="heroTitle"><span class="hero-line"><span>Bringing stories</span></span><span class="hero-line"><span>to life.</span></span></h1></div>
+  <div class="hero-reveal layer-product"><p>From the first idea<br>to the final frame.</p><a href="#work" class="link-arrow">Explore the work <svg><use href="#i-arrow"/></svg></a></div>
+  <div class="hero-bottom">
+   <div class="hero-signature"><span data-typewriter>SK Films Productions</span><span class="hero-frame" id="frameDescription">01 — Behind the frame</span><small>Illustrative production stills</small></div>
+   <a class="hero-scroll" href="#work">Selected work <span>↓</span></a>
+   <button class="reel-btn" type="button" data-reel><span class="reel-btn-ring" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="reelRingPath" d="M60 60m-47 0a47 47 0 1 1 94 0a47 47 0 1 1 -94 0"/></defs><text><textPath href="#reelRingPath" textLength="292">Play opening film · Original ident · </textPath></text></svg></span><svg class="reel-btn-ico" aria-hidden="true"><use href="#i-play"/></svg><span class="sr-only">Play the SK Films opening ident</span></button>
+  </div>
+ </div>
+</section>
+
+<section class="work" id="work" data-mood="work" aria-labelledby="workTitle" data-bg="#FFFFFF" data-text="#1C1C1C" data-label="The collection">
+  <div class="section-head">
+    <span class="label">Selected work</span>
+    <span class="label">Concept archive — illustrative frames</span>
+  </div>
+  <div class="work-head motion-trail">
+    <h2 id="workTitle" class="display">A world<br><span data-scramble>in every frame.</span></h2>
+    <div class="work-intro">
+      <p>Different frames. Different ways of seeing. Explore the collection in your own way.</p>
+      <p class="note">Collection includes illustrative studies; these are marked as concepts.</p>
+    <div class="archive-count">
+      <span class="label">Projects in this view</span>
+      <span class="odometer" id="odometer" role="img" aria-label="4 concept frames">04</span>
+    </div>
+    </div>
+  </div>
+
+  <div class="work-controls" id="workControls">
+    <div class="filters" role="group" aria-label="Filter by category">
+      <button type="button" class="is-active" data-filter="all" aria-pressed="true">All <sup id="filterCount">04</sup></button>
+      <button type="button" data-filter="film" aria-pressed="false">Film</button>
+      <button type="button" data-filter="commercial" aria-pressed="false">Commercial</button>
+      <button type="button" data-filter="visual" aria-pressed="false">Visual craft</button>
+    </div>
+    <div class="views" role="group" aria-label="Portfolio layout">
+      <button type="button" class="is-icon" data-view="grid" aria-pressed="true" aria-label="Grid view" title="Grid"><svg><use href="#i-grid"/></svg><span>Grid</span></button>
+      <button type="button" class="is-icon" data-view="list" aria-pressed="false" aria-label="List view" title="List"><svg><use href="#i-list"/></svg><span>List</span></button>
+      <button type="button" data-view="cover" aria-pressed="false" aria-label="Cinema coverflow view">Cinema</button>
+      <button type="button" data-view="pan" aria-pressed="false" aria-label="Drag to explore archive view">Archive</button>
+      <button type="button" data-view="strip" aria-pressed="false" aria-label="Horizontal filmstrip view">Filmstrip</button>
+    </div>
+  </div>
+
+  <p class="gallery-help" id="galleryHelp">A curated contact sheet. Select a frame to explore.</p><span class="sr-only" id="galleryAnnouncement" aria-live="polite"></span>
+  <div class="gallery" id="gallery" data-mode="grid">
+    <div class="gallery-stage">
+      <div class="projects" id="projects" aria-label="Concept film collection" aria-describedby="galleryHelp">
+<button type="button" class="project" data-category="commercial" data-project="1" style="--crop:52% 45%"><span class="project-media"><img src="assets/hero-v2.webp" alt="AI-generated illustrative cinema camera and crew on a warmly lit soundstage" loading="lazy" decoding="async"><span class="project-tag label">Concept 01</span><span class="project-open" aria-hidden="true"><svg><use href="#i-arrow-ne"/></svg></span></span><span class="project-info"><span class="project-title"><strong>Behind the frame</strong><em>Brand film</em></span><span class="label project-idx">01</span></span></button>
+<button type="button" class="project" data-category="film" data-project="0" style="--crop:58% 42%"><span class="project-media"><img src="assets/portrait-v2.webp" alt="AI-generated illustrative portrait of a fictional actor in soft window light" loading="lazy" decoding="async"><span class="project-tag label">Concept 02</span><span class="project-open" aria-hidden="true"><svg><use href="#i-arrow-ne"/></svg></span></span><span class="project-info"><span class="project-title"><strong>The human story</strong><em>Film &amp; drama</em></span><span class="label project-idx">02</span></span></button>
+<button type="button" class="project" data-category="visual" data-project="2" style="--crop:52% 45%"><span class="project-media"><img src="assets/landscape-v2.webp" alt="AI-generated illustrative traveler on a rocky ridge before snowy mountains" loading="lazy" decoding="async"><span class="project-tag label">Concept 03</span><span class="project-open" aria-hidden="true"><svg><use href="#i-arrow-ne"/></svg></span></span><span class="project-info"><span class="project-title"><strong>Beyond the ordinary</strong><em>Visual craft</em></span><span class="label project-idx">03</span></span></button>
+<button type="button" class="project" data-category="film" data-project="3" style="--crop:48% 45%"><span class="project-media"><img src="assets/stage-v2.webp" alt="AI-generated illustrative crew filming an interior soundstage scene" loading="lazy" decoding="async"><span class="project-tag label">Concept 04</span><span class="project-open" aria-hidden="true"><svg><use href="#i-arrow-ne"/></svg></span></span><span class="project-info"><span class="project-title"><strong>Made on set</strong><em>Film production</em></span><span class="label project-idx">04</span></span></button>
+</div>
+      <p class="gallery-empty" id="galleryEmpty" role="status" hidden>No projects in this category. Select All to explore the collection.</p>
+      <div class="gallery-progress" aria-hidden="true"><span id="galleryProgressFill"></span></div>
+      <div class="gallery-steps" hidden>
+        <button type="button" id="galleryPrev" aria-label="Previous frame"><svg style="transform:rotate(180deg)"><use href="#i-arrow"/></svg></button>
+        <span class="label" id="galleryStatus" aria-live="off"></span>
+        <button type="button" id="galleryNext" aria-label="Next frame"><svg><use href="#i-arrow"/></svg></button>
+        <button type="button" id="galleryReset" class="label" hidden>Reset view</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="work-end">
+    <span class="label">End of selected concepts</span>
+    <a href="#contact" class="link-arrow">Discuss your next film <svg><use href="#i-arrow"/></svg></a>
+  </div>
+</section>
+
+<section class="manifesto motion-trail" id="manifesto" data-mood="manifesto" aria-labelledby="manifestoTitle" data-bg="#FAF9F6" data-text="#1C1C1C" data-label="The studio">
+  <div class="section-head">
+    <span class="label">Our philosophy</span>
+    <span class="label">A film should leave a trace</span>
+  </div>
+  <div class="manifesto-grid">
+    <p class="label gold manifesto-kicker">A point of view.<br>A purpose in every frame.</p>
+    <h2 id="manifestoTitle" class="display">
+      <span class="reveal-line"><span>We believe stories</span></span>
+      <span class="reveal-line"><span>should be <span class="quiet">felt.</span></span></span>
+      <span class="reveal-line"><span>Not just seen.</span></span>
+    </h2>
+  </div>
+  <div class="manifesto-foot">
+    <span class="label">From concept to screen</span>
+    <a href="#studio" class="link-arrow">Step inside the studio <svg><use href="#i-arrow"/></svg></a>
+  </div>
+</section>
+
+<section class="studio" id="studio" data-mood="studio" aria-labelledby="studioTitle" data-bg="#FAF9F6" data-text="#1C1C1C" data-label="The studio">
+  <div class="section-head">
+    <span class="label">The studio</span>
+    <span class="label">Our point of view</span>
+  </div>
+  <div class="studio-grid">
+    <figure class="studio-visual">
+      <div class="studio-media"><img src="assets/camera-v2.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Illustrative — cinema camera in low key light"></div>
+      <figcaption class="label">Fig. 01 — The art of seeing</figcaption>
+    </figure>
+    <div class="studio-copy">
+      <p class="label gold">SK Films Productions</p>
+      <h2 id="studioTitle" class="display">A way<br>of seeing.</h2>
+      <p>A look. A gesture. A world built around a single idea. We approach film through the relationship between story, light and the people inside the frame.</p>
+      <a class="link-arrow" href="#about">Inside the studio <svg><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+
+</section>
+
+<section class="about" id="about" data-mood="about" data-nav="studio" data-label="About the studio" aria-labelledby="aboutTitle" data-bg="#F2F0EB" data-text="#1C1C1C">
+ <div class="section-head"><span class="label">Our point of view</span><span class="label">Story / Image / People / Rhythm</span></div>
+ <div class="about-heading"><h2 id="aboutTitle" class="display">One idea.<br>A whole world.</h2><p>What matters is how it feels.<br>What lasts is the story.</p></div>
+ <div class="narrative-stack"><div class="narrative-visual"><div class="narrative-image"><img class="narrative-state active" data-state="0" src="assets/portrait-v2.webp" alt="Illustrative study of story" loading="lazy" aria-hidden="false"><img class="narrative-state" data-state="1" src="assets/camera-v2.webp" alt="Illustrative study of image" loading="lazy" aria-hidden="true"><img class="narrative-state" data-state="2" src="assets/stage-v2.webp" alt="Illustrative study of people" loading="lazy" aria-hidden="true"><img class="narrative-state" data-state="3" src="assets/story-v2.webp" alt="Illustrative study of rhythm" loading="lazy" aria-hidden="true"></div><div class="narrative-caption"><span id="narrativeLabel">01 / Story</span><span>Illustrative studies</span></div></div><div class="narrative-features"><article class="narrative-feature active" data-feature="0"><img class="narrative-frame" src="assets/portrait-v2.webp" alt="Illustrative story study" loading="lazy"><span class="label gold">01 / Story</span><h3>Start with a feeling.</h3><p>A performance, a question, a moment that stays with you. The emotional centre gives every visual decision a purpose.</p></article><article class="narrative-feature" data-feature="1"><img class="narrative-frame" src="assets/camera-v2.webp" alt="Illustrative image study" loading="lazy"><span class="label gold">02 / Image</span><h3>Find its visual language.</h3><p>Light, composition and movement shape how a story is felt. The camera becomes a point of view, rather than a spectator.</p></article><article class="narrative-feature" data-feature="2"><img class="narrative-frame" src="assets/stage-v2.webp" alt="Illustrative people study" loading="lazy"><span class="label gold">03 / People</span><h3>Make room for the unexpected.</h3><p>The set is where preparation meets instinct. Direction, performance and craft work together inside the same frame.</p></article><article class="narrative-feature" data-feature="3"><img class="narrative-frame" src="assets/story-v2.webp" alt="Illustrative rhythm study" loading="lazy"><span class="label gold">04 / Rhythm</span><h3>Let the story breathe.</h3><p>A cut changes a look. A pause changes a scene. In the edit, pictures and sound find the rhythm of the film.</p></article></div></div></section>
+
+<section class="text-mask" id="statement" data-mood="statement" data-nav="studio" data-label="Bringing stories to life" aria-labelledby="maskTitle" data-bg="#FAF9F6" data-text="#1C1C1C"><div class="text-mask-inner">
+ <h2 id="maskTitle" class="mask-outline">Bring stories<br>to life.</h2>
+ <div class="mask-reveal" aria-hidden="true"><div class="mask-filled">Bring stories<br>to life.</div></div>
+ <p class="mask-subtext">A point of view. A feeling. A film.<br><a href="#contact">Tell us your story</a></p>
+</div></section>
+
+<section class="split" id="perspective" data-mood="perspective" data-nav="studio" data-label="A cinematic point of view" aria-label="Four perspectives on filmmaking" data-bg="#F2F0EB" data-text="#1C1C1C"><div class="split-sticky"><div class="split-col"><div class="split-track split-track--media"><div class="split-cell"><img src="assets/portrait-v2.webp" alt="Illustrative cinematic scene 1" loading="lazy"><span class="split-frame-label">01 / 04</span></div><div class="split-cell"><img src="assets/landscape-v2.webp" alt="Illustrative cinematic scene 2" loading="lazy"><span class="split-frame-label">02 / 04</span></div><div class="split-cell"><img src="assets/stage-v2.webp" alt="Illustrative cinematic scene 3" loading="lazy"><span class="split-frame-label">03 / 04</span></div><div class="split-cell"><img src="assets/story-v2.webp" alt="Illustrative cinematic scene 4" loading="lazy"><span class="split-frame-label">04 / 04</span></div></div></div><div class="split-col"><div class="split-track split-track--copy"><div class="split-cell split-copy"><span class="label gold">A cinematic point of view</span><h3>A moment.<br>That stays.</h3><p>Pictures find their meaning in the space between them.</p></div><div class="split-cell split-copy"><span class="label gold">A cinematic point of view</span><h3>A set.<br>A shared vision.</h3><p>The frame is made by the people behind it.</p></div><div class="split-cell split-copy"><span class="label gold">A cinematic point of view</span><h3>A place.<br>A point of view.</h3><p>The world around a character becomes part of the story.</p></div><div class="split-cell split-copy"><span class="label gold">A cinematic point of view</span><h3>A face.<br>A feeling.</h3><p>A story begins with someone worth watching.</p></div></div></div></div></section>
+
+<div class="kinetic-band" aria-label="Film, commercial, visual craft">
+  <div class="kinetic-track" aria-hidden="true">
+    <span>Story <i>·</i> Light <i>·</i> Movement <i>·</i> Feeling <i>·</i>&nbsp;</span>
+    <span>Story <i>·</i> Light <i>·</i> Movement <i>·</i> Feeling <i>·</i>&nbsp;</span>
+  </div>
+  <button class="band-pause label" type="button" aria-pressed="false">Pause motion</button>
+</div>
+
+
+
+<section class="expertise" id="expertise" data-mood="expertise" aria-labelledby="expertiseTitle" data-bg="#FFFFFF" data-text="#1C1C1C" data-label="The craft">
+  <div class="section-head">
+    <span class="label">The craft</span>
+    <span class="label">From concept to screen</span>
+  </div>
+  <div class="expertise-head">
+    <h2 id="expertiseTitle" class="display">From an idea<br>to an image.</h2>
+    <p>A considered production approach across film, commercial and visual experiences — shaped around the story.</p>
+  </div>
+  <div class="services" id="services">
+    <details class="service" data-image="assets/hero-v2.webp">
+      <summary><span class="label idx">01</span><span class="service-name">Films &amp; drama production<small class="service-subtitle">Films, dramas and short films</small></span><span class="service-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></summary>
+      <div class="service-body"><figure class="service-figure"><img src="assets/hero-v2.webp" alt="Illustrative production frame" loading="lazy"><figcaption>Illustrative craft study</figcaption></figure><p>Narrative films, drama and short-form storytelling — from first concept through production and finishing.</p><a href="services.html#films-drama" class="link-arrow">Explore this service <svg><use href="#i-arrow"/></svg></a></div>
+    </details>
+    <details class="service" data-image="assets/hero-v2.webp">
+      <summary><span class="label idx">02</span><span class="service-name">TV commercials &amp; brand films<small class="service-subtitle">TVCs, promotional and advertising films</small></span><span class="service-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></summary>
+      <div class="service-body"><figure class="service-figure"><img src="assets/hero-v2.webp" alt="Illustrative production frame" loading="lazy"><figcaption>Illustrative craft study</figcaption></figure><p>Campaign and brand films built around a clear commercial story and its audience.</p><a href="services.html#commercials" class="link-arrow">Explore this service <svg><use href="#i-arrow"/></svg></a></div>
+    </details>
+    <details class="service" data-image="assets/camera-v2.webp"><summary><span class="label idx">03</span><span class="service-name">CGI, VFX &amp; visual effects<small class="service-subtitle">Computer-generated visuals and VFX</small></span><span class="service-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></summary><div class="service-body"><figure class="service-figure"><img src="assets/camera-v2.webp" alt="Illustrative visual study" loading="lazy"><figcaption>Illustrative study</figcaption></figure><p>Computer-generated visuals and VFX. Build imagery beyond what can be captured on set. Plan computer-generated elements and visual effects around the film, with attention to how practical footage and digital work come together.</p><a href="services.html#cgi-vfx" class="link-arrow">Explore this service <svg><use href="#i-arrow"/></svg></a></div></details>
+    <details class="service" data-image="assets/stage-v2.webp"><summary><span class="label idx">04</span><span class="service-name">3D animation<small class="service-subtitle">Motion graphics and 3D animation</small></span><span class="service-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></summary><div class="service-body"><figure class="service-figure"><img src="assets/stage-v2.webp" alt="Illustrative visual study" loading="lazy"><figcaption>Illustrative study</figcaption></figure><p>Motion graphics and 3D animation. Give ideas form through movement. Use motion graphics and three-dimensional animation to explain a product, develop a visual identity or create a distinctive film sequence.</p><a href="services.html#animation" class="link-arrow">Explore this service <svg><use href="#i-arrow"/></svg></a></div></details>
+    <details class="service" data-image="assets/landscape-v2.webp"><summary><span class="label idx">05</span><span class="service-name">Architectural visualization<small class="service-subtitle">3D architectural renders / walkthroughs</small></span><span class="service-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></summary><div class="service-body"><figure class="service-figure"><img src="assets/landscape-v2.webp" alt="Illustrative visual study" loading="lazy"><figcaption>Illustrative study</figcaption></figure><p>3D architectural renders and walkthroughs. Communicate a space before it is built. Explore the proposed architecture through renders and animated walkthroughs, with a considered approach to materials, lighting and atmosphere.</p><a href="services.html#architecture" class="link-arrow">Explore this service <svg><use href="#i-arrow"/></svg></a></div></details>
+    <details class="service" data-image="assets/portrait-v2.webp">
+      <summary><span class="label idx">06</span><span class="service-name">Music video production<small class="service-subtitle">Artist videos and entertainment</small></span><span class="service-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></summary>
+      <div class="service-body"><figure class="service-figure"><img src="assets/portrait-v2.webp" alt="Illustrative production frame" loading="lazy"><figcaption>Illustrative craft study</figcaption></figure><p>Artist-led visual concepts and performance-driven production.</p><a href="services.html#music-videos" class="link-arrow">Explore this service <svg><use href="#i-arrow"/></svg></a></div>
+    </details>
+    <details class="service" data-image="assets/hero-v2.webp"><summary><span class="label idx">07</span><span class="service-name">Digital content &amp; branding<small class="service-subtitle">Design and branded digital content</small></span><span class="service-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></summary><div class="service-body"><figure class="service-figure"><img src="assets/hero-v2.webp" alt="Illustrative visual study" loading="lazy"><figcaption>Illustrative study</figcaption></figure><p>Design and branded digital content. Create a consistent visual voice across screens. Shape branded content and design for digital platforms, adapting the idea to the format and the way people will encounter it.</p><a href="services.html#digital-branding" class="link-arrow">Explore this service <svg><use href="#i-arrow"/></svg></a></div></details>
+    <h3 class="supporting-services-heading">Supporting craft</h3>
+    <details class="service" data-image="assets/stage-v2.webp">
+      <summary><span class="label idx">08</span><span class="service-name">Video editing</span><span class="service-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></summary>
+      <div class="service-body"><figure class="service-figure"><img src="assets/stage-v2.webp" alt="Illustrative production frame" loading="lazy"><figcaption>Illustrative craft study</figcaption></figure><p>Editorial rhythm, pacing and structure — assembling the story in the cut.</p><a href="#work" class="link-arrow">See concept frames <svg><use href="#i-arrow"/></svg></a></div>
+    </details>
+    <details class="service" data-image="assets/camera-v2.webp">
+      <summary><span class="label idx">09</span><span class="service-name">Cinematography</span><span class="service-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></summary>
+      <div class="service-body"><figure class="service-figure"><img src="assets/camera-v2.webp" alt="Illustrative production frame" loading="lazy"><figcaption>Illustrative craft study</figcaption></figure><p>Lighting, lensing, movement and frame composition — the visual language of the film.</p><a href="#work" class="link-arrow">See concept frames <svg><use href="#i-arrow"/></svg></a></div>
+    </details>
+    <details class="service" data-image="assets/stage-v2.webp">
+      <summary><span class="label idx">10</span><span class="service-name">Post-production</span><span class="service-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></summary>
+      <div class="service-body"><figure class="service-figure"><img src="assets/stage-v2.webp" alt="Illustrative production frame" loading="lazy"><figcaption>Illustrative craft study</figcaption></figure><p>Grading, sound design, finishing and delivery.</p><a href="#work" class="link-arrow">See concept frames <svg><use href="#i-arrow"/></svg></a></div>
+    </details>
+    <details class="service" data-image="assets/camera-v2.webp">
+      <summary><span class="label idx">11</span><span class="service-name">Photography</span><span class="service-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></summary>
+      <div class="service-body"><figure class="service-figure"><img src="assets/camera-v2.webp" alt="Illustrative production frame" loading="lazy"><figcaption>Illustrative craft study</figcaption></figure><p>Stills and key art, shot with the same eye as the film.</p><a href="#work" class="link-arrow">See concept frames <svg><use href="#i-arrow"/></svg></a></div>
+    </details>
+    <details class="service" data-image="assets/landscape-v2.webp">
+      <summary><span class="label idx">12</span><span class="service-name">Documentary production</span><span class="service-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></summary>
+      <div class="service-body"><figure class="service-figure"><img src="assets/landscape-v2.webp" alt="Illustrative production frame" loading="lazy"><figcaption>Illustrative craft study</figcaption></figure><p>Observed, real-world storytelling — from subject research to final cut.</p><a href="#work" class="link-arrow">See concept frames <svg><use href="#i-arrow"/></svg></a></div>
+    </details>
+    <p class="services-page-link"><a href="services.html" class="link-arrow">Explore all services <svg><use href="#i-arrow"/></svg></a></p>
+  </div>
+  <div class="grade">
+    <div class="grade-copy">
+      <p class="label gold">The colour room <i>/</i> Concept study</p>
+      <h3>Light changes everything.</h3>
+      <p>Two treatments of the same illustrative frame. Drag the divider — or use the arrow keys — to compare.</p>
+    </div>
+    <div class="grade-visual" id="gradeVisual">
+      <img src="assets/hero-v2.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Illustrative production set, warm grade">
+      <img class="grade-before" src="assets/hero-v2.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="">
+      <span class="grade-line" aria-hidden="true"><span>↔</span></span>
+      <span class="label grade-tag left" aria-hidden="true">Monochrome</span>
+      <span class="label grade-tag right" aria-hidden="true">Warm grade</span>
+      <input id="gradeRange" type="range" min="0" max="100" value="50" step="1" aria-label="Compare monochrome and warm grade">
+    </div>
+  </div>
+</section>
+
+<section class="people" id="people" data-mood="people" aria-labelledby="peopleTitle" data-bg="#FAF9F6" data-text="#1C1C1C" data-label="Creative disciplines">
+  <div class="section-head">
+    <span class="label">Creative disciplines</span>
+    <span class="label">Direction / Cinematography / Post</span>
+  </div>
+  <div class="people-grid">
+    <div class="people-copy">
+      <h2 id="peopleTitle" class="display">The people<br>in the picture.</h2>
+      <p>Filmmaking is a collective craft. A space for the directors, cinematographers and creative collaborators behind SK Films.</p>
+      <p class="note">Director names, biographies and approved portraits to be provided.</p>
+    </div>
+    <figure class="people-photo">
+      <div class="people-media"><img src="assets/stage-v2.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Illustrative — crew working together on a film set"></div>
+      <figcaption class="label">Illustrative on-set frame</figcaption>
+    </figure>
+  </div>
+  <div class="roles" aria-label="Creative disciplines">
+    <button class="role" type="button" aria-pressed="false">
+      <span class="role-inner">
+        <span class="role-face role-front"><img src="assets/stage-v2.webp" width="1536" height="1024" loading="lazy" decoding="async" alt=""><strong>Direction</strong><small class="label">Explore craft <svg><use href="#i-arrow"/></svg></small></span>
+        <span class="role-face role-back"><span class="label gold">Direction</span><span class="role-text">Shaping the story, the performances and the creative point of view.</span><small class="label">Tap to return</small></span>
+      </span>
+    </button>
+    <button class="role" type="button" aria-pressed="false">
+      <span class="role-inner">
+        <span class="role-face role-front"><img src="assets/camera-v2.webp" width="1536" height="1024" loading="lazy" decoding="async" alt=""><strong>Cinematography</strong><small class="label">Explore craft <svg><use href="#i-arrow"/></svg></small></span>
+        <span class="role-face role-back"><span class="label gold">Cinematography</span><span class="role-text">Composing the frame through movement, lighting and visual rhythm.</span><small class="label">Tap to return</small></span>
+      </span>
+    </button>
+    <button class="role" type="button" aria-pressed="false">
+      <span class="role-inner">
+        <span class="role-face role-front"><img src="assets/story-v2.webp" width="1536" height="1024" loading="lazy" decoding="async" alt=""><strong>Post-production</strong><small class="label">Explore craft <svg><use href="#i-arrow"/></svg></small></span>
+        <span class="role-face role-back"><span class="label gold">Post-production</span><span class="role-text">Editing, finishing and bringing the final image to life.</span><small class="label">Tap to return</small></span>
+      </span>
+    </button>
+  </div>
+</section>
+
+<section class="process" id="process" data-mood="process" aria-labelledby="processTitle" data-bg="#F2F0EB" data-text="#1C1C1C" data-label="The process">
+  <div class="section-head">
+    <span class="label">The process</span>
+    <span class="label">From idea to final frame</span>
+  </div>
+  <h2 id="processTitle" class="display">Every frame<br><span class="quiet">with intention.</span></h2>
+  <p class="process-intro">Five stages. One continuous story. A proposed production journey, from the first conversation to the final master.</p>
+
+  <div class="process-track" id="processTrack">
+    <div class="process-visual">
+      <div class="process-photo">
+        <img id="processImage" src="assets/story-v2.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Illustrative — narrative film frame in black and white">
+        <span class="label process-label" id="processLabel">01 <i>/</i> Concept development</span>
+      </div>
+      <svg class="process-path" viewBox="0 0 400 500" aria-hidden="true"><path class="process-path-base" d="M200,20 C200,20 80,80 80,140 C80,200 320,200 320,260 C320,320 80,320 80,380 C80,440 200,480 200,480"/><path id="pathDraw" d="M200,20 C200,20 80,80 80,140 C80,200 320,200 320,260 C320,320 80,320 80,380 C80,440 200,480 200,480"/><g class="process-milestone"><circle cx="200" cy="20" r="6"/><text x="216" y="25">01</text></g><g class="process-milestone"><circle cx="80" cy="140" r="6"/><text x="96" y="145">02</text></g><g class="process-milestone"><circle cx="320" cy="260" r="6"/><text x="336" y="265">03</text></g><g class="process-milestone"><circle cx="80" cy="380" r="6"/><text x="96" y="385">04</text></g><g class="process-milestone"><circle cx="200" cy="480" r="6"/><text x="216" y="485">05</text></g></svg>
+      <span class="label process-stages">Concept / Pre-production / Production / Post / Delivery</span>
+    </div>
+    <ol class="process-steps">
+      <li class="step"><img class="step-photo" src="assets/story-v2.webp" alt="Illustrative filmmaking stage" loading="lazy"><div class="step-copy"><span class="label gold">01 <i>/</i> Concept development</span><h3>Find the story.</h3><p>Understanding the story, its objectives, the creative direction and the visual identity it should carry.</p></div></li>
+      <li class="step"><img class="step-photo" src="assets/camera-v2.webp" alt="Illustrative filmmaking stage" loading="lazy"><div class="step-copy"><span class="label gold">02 <i>/</i> Pre-production</span><h3>Build the plan.</h3><p>Script, storyboard, casting, locations and production logistics — every shoot day prepared before it happens.</p></div></li>
+      <li class="step"><img class="step-photo" src="assets/stage-v2.webp" alt="Illustrative filmmaking stage" loading="lazy"><div class="step-copy"><span class="label gold">03 <i>/</i> Production</span><h3>Make the frame.</h3><p>Directing, cinematography, lighting and sound come together to capture the intended creative vision.</p></div></li>
+      <li class="step"><img class="step-photo" src="assets/hero-v2.webp" alt="Illustrative filmmaking stage" loading="lazy"><div class="step-copy"><span class="label gold">04 <i>/</i> Post-production</span><h3>Shape the feeling.</h3><p>Editing, colour grading, sound design and finishing shape the film into its final form.</p></div></li>
+      <li class="step"><img class="step-photo" src="assets/landscape-v2.webp" alt="Illustrative filmmaking stage" loading="lazy"><div class="step-copy"><span class="label gold">05 <i>/</i> Final delivery</span><h3>Hand over the film.</h3><p>Review, refinement, mastering and delivery of the finished film in every format it needs to live in.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="reel" id="reel" data-mood="reel" aria-labelledby="reelTitle" data-bg="#FAF9F6" data-text="#1C1C1C" data-label="Opening film"><div class="reel-screen">
+  <img class="reel-still" src="assets/intro-poster.jpg" width="720" height="406" loading="lazy" decoding="async" alt="Still from the SK Films branded opening animation">
+  <div class="reel-shade" aria-hidden="true"></div>
+  <div class="curtain curtain--left" aria-hidden="true"><span>Roll</span></div>
+  <div class="curtain curtain--right" aria-hidden="true"><span>film.</span></div>
+  <div class="reel-label"><span class="label">The original SK Films ident</span><span class="label timecode">00:13</span></div>
+  <button class="big-play" type="button" data-reel aria-label="Play the SK Films opening film">
+    <svg class="big-play-ico" aria-hidden="true"><use href="#i-play"/></svg>
+    <svg class="reel-ring" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="ringPath" d="M60 60m-49 0a49 49 0 1 1 98 0a49 49 0 1 1 -98 0"/></defs><text><textPath href="#ringPath" textLength="300">Play the opening film · SK Films · 00:13 · </textPath></text></svg>
+  </button>
+  <p class="reel-note">Original brand ident · Production showreel to follow</p><div class="reel-caption"><span class="label">Original SK Films animation</span><h2 id="reelTitle" class="display">In <span class="gradient-title"><svg class="gradient-outline" viewBox="0 0 600 150" role="img" aria-label="motion."><defs><linearGradient id="goldStroke" x1="-300%" x2="100%" gradientUnits="userSpaceOnUse" spreadMethod="repeat"><stop stop-color="#D4A017"/><stop offset=".4" stop-color="#F2F0EB"/><stop offset=".65" stop-color="#D4A017"/><stop offset="1" stop-color="#665020"/></linearGradient></defs><text x="4" y="126">motion.</text></svg></span></h2></div>
+</div></section>
+
+<!-- LOCATION START --><section class="studio-location" id="locations" data-mood="locations" data-bg="#F2F0EB" data-text="#1C1C1C" data-nav="contact" data-label="Our offices" aria-labelledby="locationTitle"><div><p class="label">SK Films Productions</p><h2 id="locationTitle">Our offices.</h2></div><div class="office-grid"><article class="office-card"><h3>Islamabad</h3><address>Office 304, 3rd Floor, Kohsar Plaza, 131 Main Boulevard, Faisal Margalla City, B-17, Islamabad 44000, Pakistan</address><a class="service-cta" href="https://maps.app.goo.gl/ine7izpesokFrH8E9" target="_blank" rel="noopener noreferrer">Open Google Maps <span aria-hidden="true">↗</span></a><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3320.1939384798443!2d72.8164804!3d33.6780421!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbd5123f1eb79%3A0x511a028f4cce6854!2sSK%20Films%20Productions!5e0!3m2!1sen!2s!4v1795779633501!5m2!1sen!2s" title="Islamabad office on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></article><article class="office-card"><h3>Lahore</h3></article><article class="office-card"><h3>Dubai</h3></article><article class="office-card"><h3>Australia</h3></article></div></section><!-- LOCATION END -->
+<section class="contact" id="contact" data-mood="contact" aria-labelledby="contactTitle" data-bg="#FFFFFF" data-text="#1C1C1C" data-label="The next chapter">
+  <canvas class="mesh" id="meshCanvas" aria-hidden="true"></canvas>
+  <div class="section-head">
+    <span class="label">The next chapter</span>
+    <span class="label">Project enquiries</span>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-statement">
+
+      <h2 id="contactTitle" class="display">Your next<br>chapter.</h2>
+      <p>Tell us what you're imagining — the story, the audience, the moment it needs to land.</p>
+      <div class="magnet-field" aria-hidden="true"></div><button type="button" class="mesh-toggle label" aria-pressed="false">Pause background motion</button>
+    </div>
+    <form id="enquiry" novalidate>
+      <div class="field">
+        <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name" placeholder=" ">
+        <label for="f-name">Your name <span class="req" aria-hidden="true">*</span></label>
+        <p class="field-error" id="e-name" aria-live="polite"></p>
+      </div>
+      <div class="field">
+        <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email" placeholder=" ">
+        <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+        <p class="field-error" id="e-email" aria-live="polite"></p>
+      </div>
+      <div class="field">
+        <input id="f-company" name="company" type="text" autocomplete="organization" placeholder=" ">
+        <label for="f-company">Company <span class="opt">optional</span></label>
+        <p class="field-error" id="e-company"></p>
+      </div>
+      <div class="field-row">
+        <div class="field field--select">
+          <select id="f-type" name="type" required aria-describedby="e-type">
+            <option value="">Select a discipline</option>
+            <option value="Film production">Films &amp; drama production</option><option value="Commercial / brand film">TV commercials &amp; brand films</option><option value="Music video">Music video production</option>
+            <option>Documentary</option><option>Photography</option><option>Post-production</option><option>CGI, VFX &amp; visual effects</option><option>3D animation</option><option>Architectural visualization</option><option>Digital content &amp; branding</option><option>Other</option>
+          </select>
+          <label for="f-type">Project type <span class="req" aria-hidden="true">*</span></label>
+          <p class="field-error" id="e-type" aria-live="polite"></p>
+        </div>
+        <div class="field field--select">
+          <select id="f-budget" name="budget">
+            <option value="">Select a range</option>
+            <option>Under 5,000</option><option>5,000 – 15,000</option><option>15,000 – 40,000</option>
+            <option>40,000 – 100,000</option><option>100,000 +</option><option>To be discussed</option>
+          </select>
+          <label for="f-budget">Estimated budget</label>
+          <p class="field-error" id="e-budget"></p>
+        </div>
+      </div>
+      <div class="field">
+        <input id="f-timeline" name="timeline" type="text" placeholder=" ">
+        <label for="f-timeline">Timeline <span class="opt">e.g. Spring 2027</span></label>
+        <p class="field-error" id="e-timeline"></p>
+      </div>
+      <div class="field">
+        <textarea id="f-brief" name="brief" rows="3" required minlength="20" aria-describedby="e-brief" placeholder=" "></textarea>
+        <label for="f-brief">About the project <span class="req" aria-hidden="true">*</span></label>
+        <p class="field-error" id="e-brief" aria-live="polite"></p>
+      </div>
+      <button type="submit" class="submit" id="submitBtn"><span>Download project brief</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      <p class="form-note" id="formNote" aria-live="polite">Your brief downloads as a text file. Nothing is sent to SK Films. Official contact details will be added before launch.</p>
+    <div class="brief-success" id="briefSuccess" role="status" hidden><span class="label gold">Brief ready</span><h3>Your brief is ready.</h3><p>Save the text file and keep it ready to share. Nothing has been sent to SK Films.</p><button type="button" id="editBrief" class="link-arrow">Edit your brief</button></div></form>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+ <div class="footer-brand"><img src="assets/logo.png" width="400" height="367" loading="lazy" alt="SK Films Productions"><span class="footer-tag">Bringing stories<br>to life.</span></div>
+ <nav class="footer-nav" aria-label="Footer"><a href="insights.html">Insights</a><a href="services.html">Services</a><a href="#work">The collection</a><a href="#studio">The studio</a><a href="#about">Our point of view</a><a href="#expertise">The craft</a><a href="#process">The process</a></nav>
+ <div class="footer-bottom"><span class="label">© SK Films Productions</span><div class="footer-links"><button type="button" data-replay>Replay the opening <svg><use href="#i-play"/></svg></button><a href="#top">Back to top ↑</a></div><a class="motion-credit" href="LICENSE-CINEMATIC-MODULES.txt">Motion by Jay / RoboLabs</a></div>
+</footer>
+
+<!-- ─────────── Floating navigation ─────────── -->
+<nav class="dock" id="dock" aria-label="Section navigation">
+  <a href="#top" class="label">Top</a>
+  <a href="#work" class="label">Work</a>
+  <a href="#studio" class="label">Studio</a>
+  <a href="#expertise" class="label">Craft</a>
+  <a href="#contact" class="label">Contact</a>
+</nav>
+<div class="island" id="island">
+ <button class="island-trigger" id="islandToggle" type="button" aria-expanded="false" aria-controls="islandLinks"><i aria-hidden="true"></i><span id="islandLabel">SK Films</span><b aria-hidden="true">+</b><span class="sr-only">Quick navigation</span></button>
+ <nav class="island-content" id="islandLinks" aria-label="Quick navigation" inert><a href="#work">Work</a><a href="#studio">Studio</a><a href="#expertise">Craft</a><a href="#contact">Start a project</a></nav>
+</div>
+
+<!-- ─────────── Dialogs ─────────── -->
+<dialog id="player" class="player" aria-labelledby="playerTitle">
+  <div class="dialog-bar"><span class="label" id="playerTitle">SK Films <i>/</i> Opening film</span><button class="btn-ghost" type="button" data-close>Close <span aria-hidden="true">×</span></button></div>
+  <video id="reelVideo" controls playsinline preload="none" poster="assets/intro-poster.jpg"></video><p id="playerError" class="player-error" hidden>The film could not load. Please close the player and try again.</p>
+</dialog>
+
+<dialog id="projectDialog" class="project-dialog" aria-labelledby="projectTitle">
+  <div class="dialog-bar"><span class="label" id="projectType"></span><button class="btn-ghost" type="button" data-close>Close <span aria-hidden="true">×</span></button></div>
+  <div class="project-detail">
+    <div class="project-detail-media"><img id="projectPhoto" alt=""><button type="button" class="frame-fit" id="frameFit" aria-pressed="false">View full frame</button></div>
+    <div class="project-detail-copy">
+      <p class="label gold">A cinematic concept / Illustrative collection</p>
+      <h2 id="projectTitle"></h2>
+      <p id="projectDescription"></p>
+      <p class="note">Design concept only. To be replaced with approved production footage, credits and client information.</p>
+      <div class="project-nav">
+        <button type="button" class="label" id="projectPrev"><svg style="transform:rotate(180deg)"><use href="#i-arrow"/></svg> Previous</button>
+        <span class="label" id="projectIndex"></span>
+        <button type="button" class="label" id="projectNext">Next <svg><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+  </div>
+</dialog>
+</body>
+</html>

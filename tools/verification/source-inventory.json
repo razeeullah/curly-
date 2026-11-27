@@ -1,0 +1,242 @@
+[
+  {
+    "name": "Text Mask Reveal",
+    "source": "text-mask.html",
+    "placement": "Studio statement",
+    "original": "CSS background-clip text + separate clip-path overlay; GSAP inset 100%\u21920, scrub .3, top top\u219260% bottom; subtitle 55\u219270%",
+    "baseline": "SVG rect substitution; motion initialization failed",
+    "adaptation": "Source clipping restored; real local still replaces the demo gradient; no unrelated fade-up demo"
+  },
+  {
+    "name": "Sticky Stack Narrative",
+    "source": "sticky-stack.html",
+    "placement": "Process visual",
+    "original": "CSS sticky visual; ScrollTrigger top 60%\u2192bottom 40%; state crossfades .5s; active feature transition .4s",
+    "baseline": "Image src swaps; no persistent crossfade layers; motion aborted",
+    "adaptation": "Persistent film states replace SaaS mockups; static tablet/mobile pairing"
+  },
+  {
+    "name": "Layered Zoom Parallax",
+    "source": "zoom-parallax.html",
+    "placement": "Hero",
+    "original": "Sticky 500vh; background 1\u21921.15; middle 1\u21921.6 / y \u2212100; foreground 1\u21926 / opacity .9\u21920; reveal .85\u21921 at 40\u219260%, fade 75\u219290%",
+    "baseline": "Single mild still scale and text translation; motion aborted",
+    "adaptation": "Source layer endpoints retained; mobile track 400svh; product mockup becomes film statement"
+  },
+  {
+    "name": "Horizontal Scroll",
+    "source": "horizontal-scroll.html",
+    "placement": "Portfolio Strip view",
+    "original": "CSS sticky viewport; GSAP x=\u2212measured travel; count\u00d7100vh section; linear, scrub .5, refresh invalidation",
+    "baseline": "scrollLeft approximation; motion aborted",
+    "adaptation": "Source translated track restored; desktop scroll travel measured after filter/layout changes; native touch strip"
+  },
+  {
+    "name": "Sticky Cards",
+    "source": "sticky-cards.html",
+    "placement": "Process steps",
+    "original": "CSS sticky tops increment 20px; source 32px gaps; older scale .95 / opacity .6; next top80%\u2192top20%, scrub true",
+    "baseline": "Single sticky top, scale .955 approximation; motion aborted",
+    "adaptation": "Source stacking/scale/opacity restored on desktop; readable unstacked tablet/mobile"
+  },
+  {
+    "name": "SVG Draw",
+    "source": "svg-draw.html",
+    "placement": "Process milestones",
+    "original": "getTotalLength + strokeDasharray/offset; linear scrub .3; milestones 15+i\u00d720%\u219222+i\u00d720%",
+    "baseline": "Normalized straight path with no milestone progression; motion aborted",
+    "adaptation": "Real length and milestone opacity restored; straight route fits existing timeline; no standalone winding illustration"
+  },
+  {
+    "name": "Curtain Reveal",
+    "source": "curtain-reveal.html",
+    "placement": "Opening-film section",
+    "original": "Sticky 300vh; opposing xPercent \u00b1100; power2.inOut; top top\u219260% top; scrub .5",
+    "baseline": "Short section and linear custom variable; motion aborted",
+    "adaptation": "Source opposing timeline restored; original ident remains available independently of scrolling; mobile260svh"
+  },
+  {
+    "name": "Split Screen Scroll",
+    "source": "split-scroll.html",
+    "placement": "Vision / craft narrative",
+    "original": "Sticky viewport; opposite track translations across (count\u22121)\u00d7itemHeight; ease none, scrub .3",
+    "baseline": "Custom scroll arithmetic; incorrect relative track base; motion aborted",
+    "adaptation": "Two film/copy pairs replace four demo pairs; matching per-item travel; static paired tablet/mobile"
+  },
+  {
+    "name": "Color Shift",
+    "source": "color-shift.html",
+    "placement": "Section atmosphere",
+    "original": "ScrollTrigger top60%\u2192bottom40%, enter/enterBack switches body foreground/background; .8s CSS transitions",
+    "baseline": "Section classes never applied mood colors; motion aborted",
+    "adaptation": "Source sequencing restored within dark palette; typography custom colors stay readable"
+  },
+  {
+    "name": "Cursor Reactive",
+    "source": "cursor-reactive.html",
+    "placement": "Hero / portfolio / controls / reel",
+    "original": "Glow .12 interpolation; 500px field; perspective600, x/y\u00d712 tilt + scale1.02; magnetic strength .3; Canvas ripples +4 radius / \u2212.006 alpha per frame",
+    "baseline": "Pointer glow snapped; tilt3.2; ripples missing; motion aborted",
+    "adaptation": "Source mechanisms restored; frame-rate normalization; explicit touch ripple; hover tilt omitted on touch"
+  },
+  {
+    "name": "Accordion Slider",
+    "source": "accordion-slider.html",
+    "placement": "Fullscreen hero panels",
+    "original": "CSS flex1\u21925, .6s cubic-bezier(.16,1,.3,1); image1.05; stagger .1/.15/.2s; mobile60\u2192280px",
+    "baseline": "Small thumbnail rail flex1.7 and560ms; no real image panels",
+    "adaptation": "Full panel mechanism restored; pointer/keyboard selection synchronized; demo vertical service variant omitted"
+  },
+  {
+    "name": "Cursor Image Reveal",
+    "source": "cursor-reveal.html",
+    "placement": "Colour-room comparison",
+    "original": "Horizontal drag ratio clamp; clip-path inset(0,(1\u2212p)\u00d7100%,0,0); divider follows; touch move",
+    "baseline": "Hover wipe approximation; motion aborted",
+    "adaptation": "Drag/pointer-capture + native keyboard range; circular spotlight/vertical/hover-grid demos omitted"
+  },
+  {
+    "name": "Hover Image Trail",
+    "source": "image-trail.html",
+    "placement": "Manifesto",
+    "original": "20-item pool; 60px distance threshold; random \u00b110\u00b0\u2192\u00b115\u00b0; scale .8\u2192.6; .8s fade delayed .3s",
+    "baseline": "Pool6, threshold110, fixed rotation and upward drift; motion aborted",
+    "adaptation": "Source spawn/rotation/fade restored using local stills; touch tap spawn; repeated demo section omitted"
+  },
+  {
+    "name": "3D Flip Cards",
+    "source": "flip-cards.html",
+    "placement": "Creative disciplines",
+    "original": "CSS perspective800; rotateY180; .6s cubic-bezier(.16,1,.3,1); backface hidden; hover and persistent tap",
+    "baseline": "Perspective1100 /760ms; tap handler unavailable after motion abort",
+    "adaptation": "Source mechanism/timing restored; semantic buttons; reduced motion swaps readable faces"
+  },
+  {
+    "name": "Magnetic Repel Grid",
+    "source": "magnetic-grid.html",
+    "placement": "Contact statement",
+    "original": "12\u00d78 tiles (8\u00d76 mobile); radius120; force(1\u2212distance/120)\u00d718; atan2 direction; .4s ease return",
+    "baseline": "72 tiny dots and radius130; no motion after startup failure",
+    "adaptation": "Source dimensions/count/force restored; stable layout coordinates avoid feedback jitter; touch press pulse"
+  },
+  {
+    "name": "Spotlight Border",
+    "source": "spotlight-border.html",
+    "placement": "Shared service surface",
+    "original": "All neighboring cards receive local pointer coordinates from shared grid; radial180px; opacity .3s",
+    "baseline": "Per-row glow only; motion aborted",
+    "adaptation": "Shared-coordinate field restored over editorial service rows instead of rounded feature cards"
+  },
+  {
+    "name": "Drag-to-Pan Grid",
+    "source": "drag-pan.html",
+    "placement": "Portfolio Archive view",
+    "original": "Absolute scattered canvas; pointer origin = pointer\u2212current offset; direct two-axis translation; mouse/touch; source has NO inertia",
+    "baseline": "Bounded scroll container, mouse-only dragging",
+    "adaptation": "Actual source canvas translation restored; four real concept entries; reset and keyboard panning added; no duplicate projects"
+  },
+  {
+    "name": "View Transition Morphing",
+    "source": "view-transitions.html",
+    "placement": "Project dialog",
+    "original": "Actual supplied code uses CSS overlay opacity .3s + scale .9/y20\u21921/0 over .4s; declarations alone do not call native API",
+    "baseline": "Native opening transition attempted; no reverse transition",
+    "adaptation": "Source CSS fallback retained; native shared-image open/close enhancement; skip/cleanup on interruptions; morph pill demo covered by island"
+  },
+  {
+    "name": "Particle Explosion Button",
+    "source": "particle-button.html",
+    "placement": "Valid local brief export",
+    "original": "20 circles; random angle; distance40..120; dy\u221240; .6s cubic-bezier(.16,1,.3,1);700ms cleanup; separate .5s expanding ring120px",
+    "baseline": "Fixed radial trajectory, different duration, missing ring; motion aborted",
+    "adaptation": "Source burst plus confirmation ring; only after download starts; unrelated confetti/delete variant omitted"
+  },
+  {
+    "name": "Odometer Counter",
+    "source": "odometer.html",
+    "placement": "Filtered portfolio count",
+    "original": "10-digit strips; translate digit\u00d7actual height;1.5s cubic-bezier(.16,1,.3,1); .12s digit stagger; entry top85%",
+    "baseline": "700ms no stagger; initial visible count skipped wheel construction",
+    "adaptation": "Source strips/duration/stagger restored; genuine filtered count only; no fabricated statistics"
+  },
+  {
+    "name": "3D Coverflow",
+    "source": "coverflow.html",
+    "placement": "Portfolio Cinema view",
+    "original": "Perspective1200; offset\u00d7220; \u00b140\u00b0; active scale1 otherwise .8; opacity1\u2212distance\u00d7.2 up to2; brightness .6; .6s source easing",
+    "baseline": "Different travel/depth/angle and visibility;720ms",
+    "adaptation": "Source transform/brightness/opacity formula restored;150px mobile spacing; arrow and side-click navigation retained"
+  },
+  {
+    "name": "Dynamic Island",
+    "source": "dynamic-island.html",
+    "placement": "Mobile quick navigation",
+    "original": "Pill morph; .5s cubic-bezier(.16,1,.3,1); border-radius100\u219220; width320; expanded contextual content",
+    "baseline": "Static pill opened unrelated fullscreen menu; no morph",
+    "adaptation": "Island itself expands with real section links; bottom safe-area placement; inert closed links and Escape; fictional notifications omitted"
+  },
+  {
+    "name": "Dock Navigation",
+    "source": "dock-nav.html",
+    "placement": "Desktop quick navigation",
+    "original": "Actual width/height48\u219272 based on cursor distance/range120; .2s source easing; neighbors shift",
+    "baseline": "Small transform scale1.16 instead of real item growth; motion aborted",
+    "adaptation": "Source geometry restored; film section labels replace unrelated colorful icons; no invented links"
+  },
+  {
+    "name": "Text Scramble Decode",
+    "source": "text-scramble.html",
+    "placement": "Portfolio heading",
+    "original": "Random glyph set; per-character threshold(index/len)\u00d7.7+.15;1200ms scroll decode top80%; character state colors",
+    "baseline": "760ms linear cutoff; motion aborted",
+    "adaptation": "Source stagger algorithm restored; static accessible text label; hover/counter demonstration variants omitted"
+  },
+  {
+    "name": "Kinetic Marquee",
+    "source": "kinetic-marquee.html",
+    "placement": "Film disciplines band",
+    "original": "Duplicated content;80px/sec + abs(scrollVelocity)\u00d7.15; per-row direction/speed",
+    "baseline": "26px/sec, multiplier .09 and no initialization",
+    "adaptation": "Speed formula retained with time normalization; source sign/wrap bug corrected for a genuine seamless loop; one meaningful band, pause/offscreen gating"
+  },
+  {
+    "name": "Mesh Gradient",
+    "source": "mesh-gradient.html",
+    "placement": "Contact background",
+    "original": "Canvas2D four randomized blobs;vx/vy speed .4; radius .3..5; radial gradients; lighter compositing; bounce \u2212.2..1.2;2\u00d7 backing",
+    "baseline": "Three CSS radial-gradient elements; wrong mechanism; pause unavailable",
+    "adaptation": "Source Canvas mechanism restored in gold/neutral palette; offscreen/hidden/pause gating; capped2\u00d7 backing"
+  },
+  {
+    "name": "Circular Text Path",
+    "source": "circular-text.html",
+    "placement": "Ident play controls",
+    "original": "SVG textPath; source20s main /30s variant linear spin; scroll angle += velocity\u00d7.02",
+    "baseline": "26s main spin; scroll behavior unavailable",
+    "adaptation": "20s/30s source rotation; supplemental scroll angle on separate transform owner; pause/reduced motion"
+  },
+  {
+    "name": "Glitch Effect",
+    "source": "glitch-effect.html",
+    "placement": "Selected frame number",
+    "original": "Two clipped pseudo-elements; changing source slices; .4s steps2/steps3; \u00b13px displacement; hover in source",
+    "baseline": "Different cuts,160/180ms bursts; no initialized handler",
+    "adaptation": "Source slices/keyframes retained as one400ms gold/ivory burst instead of endless RGB flashing; small localized area; reduced motion off"
+  },
+  {
+    "name": "Typewriter",
+    "source": "typewriter.html",
+    "placement": "Hero signature",
+    "original": "60ms type /30ms delete /40-frame hold /400ms next phrase;600ms caret",
+    "baseline": "One-shot55ms reveal with no deletion or cycling; motion aborted",
+    "adaptation": "Source cycle restored after intro; sensible film phrases; offscreen pause; code/chat demos omitted"
+  },
+  {
+    "name": "Gradient Stroke Text",
+    "source": "gradient-stroke.html",
+    "placement": "Opening-film title",
+    "original": "Intended outlined text; traveling300% gradient in6s linear; filled variant4s ease. Actual transparent currentColor stroke is browser-inconsistent",
+    "baseline": "Filled gold text instead of traveling outline",
+    "adaptation": "SVG gradient stroke preserves outlined intent and6s linear travel; fixes transparent stroke; no filled decorative variant"
+  }
+]

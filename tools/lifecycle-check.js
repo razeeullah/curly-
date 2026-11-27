@@ -1,0 +1,10 @@
+async(page)=>{
+ const ctx=await page.context().browser().newContext({viewport:{width:1440,height:900}});await ctx.addInitScript(()=>sessionStorage.setItem('sk-opening-seen','1'));const p=await ctx.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));await p.bringToFront();await p.goto('http://127.0.0.1:8081/',{waitUntil:'networkidle'});
+ const states=[];for(const fraction of [.4,.6,.75,.9,.55]){await p.evaluate(f=>{const e=document.querySelector('.hero');scrollTo(0,e.offsetTop+e.offsetHeight*f);},fraction);await p.waitForTimeout(350);states.push({fraction,...await p.locator('.hero-reveal').evaluate(e=>({opacity:getComputedStyle(e).opacity,visibility:getComputedStyle(e).visibility}))});}
+ if(+states[1].opacity<.9||+states[3].opacity>.05||+states[4].opacity<.3)throw Error('Hero reveal sequencing: '+JSON.stringify(states));
+ for(const [selector,file]of [['.work','final-work'],['.contact','final-contact']]){await p.evaluate(selector=>{const e=document.querySelector(selector);scrollTo(0,e.offsetTop);},selector);await p.waitForTimeout(1500);await p.screenshot({path:'output/playwright/'+file+'.png'});}
+ await p.evaluate(()=>scrollTo(0,0));await p.waitForTimeout(400);const a=await p.locator('.reel-btn-ring').evaluate(e=>getComputedStyle(e).transform);
+ await p.evaluate(()=>{dispatchEvent(new PageTransitionEvent('pagehide',{persisted:true}));dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true}));});await p.waitForTimeout(350);const b=await p.locator('.reel-btn-ring').evaluate(e=>getComputedStyle(e).transform);if(a===b)throw Error('Simulated page restoration did not resume ambient motion');
+ await p.goto('http://127.0.0.1:8081/LICENSE-CINEMATIC-MODULES.txt');await p.goBack({waitUntil:'domcontentloaded'});await p.waitForTimeout(400);await p.locator('[data-chapter="1"]').focus();await p.keyboard.press('ArrowRight');if(await p.locator('[data-chapter="2"]').getAttribute('aria-pressed')!=='true')throw Error('Back navigation broke controls');
+ await ctx.close();return{heroReveal:states,simulatedPersistedPageRestore:true,realBackNavigation:true,errors};
+}

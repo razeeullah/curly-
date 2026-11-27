@@ -1,0 +1,62 @@
+[
+  {
+    "name": "hero",
+    "prompt": "Use case: photorealistic-natural. Asset type: high-resolution cinematic production website photograph, 3:2 landscape. Create one exceptionally sharp editorial photograph of a professional cinema camera rig in the foreground on a working soundstage. Realistic optics, detailed metal hardware, tactile camera cables, a large softbox and practical warm tungsten light in the background; two crew members seen naturally from behind, not posed. Broad composition useful for both wide and vertical crops, main camera around center-left. Sophisticated warm-neutral grading with clean highlights, readable midtones and restrained contrast, no murky blacks. Crisp documentary photography, fine material detail, realistic depth of field without excessive blur, no artificial grain. This is an illustrative scene, no actual clients. No logos, readable text, watermarks or borders. Output at the highest available resolution, ideally at least 2048 pixels wide.",
+    "savedPath": "assets/hero-v2.webp",
+    "mode": "built-in image_gen",
+    "illustrative": true,
+    "width": 1536,
+    "height": 1024,
+    "bytes": 330788
+  },
+  {
+    "name": "portrait",
+    "prompt": "Use case: photorealistic-natural. Asset type: high-resolution illustrative photograph for a premium film-production portfolio. A close editorial portrait of a fictional South Asian woman actor, about 30, facing slightly right with a thoughtful natural expression. Soft side window light, natural skin texture and crisp eyes, dark neutral background, shoulder and head fully in frame with generous breathing space. A narrative film still, no beauty retouching or exaggerated blur. Landscape 3:2 composition usable as portrait crop. Exceptionally sharp, clean digital-cinema photography with fine real material detail and realistic light. Avoid low resolution, artificial film grain, muddy blacks, painterly textures, excessive shallow-focus blur, or oversharpening halos. No text, logos, watermark, collage, border, or recognizable real clients. Highest available resolution, ideally 2048 pixels wide or greater. This is fictional illustrative imagery.",
+    "savedPath": "assets/portrait-v2.webp",
+    "mode": "built-in image_gen",
+    "illustrative": true,
+    "width": 1536,
+    "height": 1024,
+    "bytes": 210394
+  },
+  {
+    "name": "landscape",
+    "prompt": "Use case: photorealistic-natural. Asset type: high-resolution illustrative photograph for a premium film-production portfolio. An expansive cinematic view of rugged northern Pakistan mountain peaks at dawn, a lone fictional traveler wearing a dark coat standing centrally on a rocky ridge in the lower third. Crisp rock textures and distant snowy ridges, natural scale, clean air, balanced daylight, broad 3:2 landscape composition useful for wide panoramic and vertical crops. Exceptionally sharp, clean digital-cinema photography with fine real material detail and realistic light. Avoid low resolution, artificial film grain, muddy blacks, painterly textures, excessive shallow-focus blur, or oversharpening halos. No text, logos, watermark, collage, border, or recognizable real clients. Highest available resolution, ideally 2048 pixels wide or greater. This is fictional illustrative imagery.",
+    "savedPath": "assets/landscape-v2.webp",
+    "mode": "built-in image_gen",
+    "illustrative": true,
+    "width": 1536,
+    "height": 1024,
+    "bytes": 516024
+  },
+  {
+    "name": "stage",
+    "prompt": "Use case: photorealistic-natural. Asset type: high-resolution illustrative photograph for a premium film-production portfolio. A wide documentary-style production photograph inside a professional film soundstage, crew working around a cinema camera and boom microphone, practical light stands, a carefully lit interior set with warm windows. Candid people seen at a distance without prominent faces, believable equipment, crisp detail across the scene, no dense haze. 3:2 landscape. Exceptionally sharp, clean digital-cinema photography with fine real material detail and realistic light. Avoid low resolution, artificial film grain, muddy blacks, painterly textures, excessive shallow-focus blur, or oversharpening halos. No text, logos, watermark, collage, border, or recognizable real clients. Highest available resolution, ideally 2048 pixels wide or greater. This is fictional illustrative imagery.",
+    "savedPath": "assets/stage-v2.webp",
+    "mode": "built-in image_gen",
+    "illustrative": true,
+    "width": 1536,
+    "height": 1024,
+    "bytes": 392622
+  },
+  {
+    "name": "story",
+    "prompt": "Use case: photorealistic-natural. Asset type: high-resolution illustrative photograph for a premium film-production portfolio. A documentary-style film production photograph of a director and cinematographer seen from behind studying a camera monitor beside a professional cinema rig during an interior shoot. Clearly structured composition, detailed equipment, warm natural practical lights, readable midtones. Wide 3:2 landscape, center subjects protected for mobile crops. Exceptionally sharp, clean digital-cinema photography with fine real material detail and realistic light. Avoid low resolution, artificial film grain, muddy blacks, painterly textures, excessive shallow-focus blur, or oversharpening halos. No text, logos, watermark, collage, border, or recognizable real clients. Highest available resolution, ideally 2048 pixels wide or greater. This is fictional illustrative imagery.",
+    "savedPath": "assets/story-v2.webp",
+    "mode": "built-in image_gen",
+    "illustrative": true,
+    "width": 1536,
+    "height": 1024,
+    "bytes": 294402
+  },
+  {
+    "name": "camera",
+    "prompt": "Use case: photorealistic-natural. Asset type: high-resolution illustrative photograph for a premium film-production portfolio. A detailed close editorial photograph of a professional cinema camera with matte box, focus rings, rail supports and carefully arranged cables, on a sturdy tripod inside a softly lit studio. Tactile black metal and glass, sharp lens and rig detail, neutral charcoal and warm ivory palette. Clear camera silhouette centered for vertical crops, landscape 3:2 composition. Exceptionally sharp, clean digital-cinema photography with fine real material detail and realistic light. Avoid low resolution, artificial film grain, muddy blacks, painterly textures, excessive shallow-focus blur, or oversharpening halos. No text, logos, watermark, collage, border, or recognizable real clients. Highest available resolution, ideally 2048 pixels wide or greater. This is fictional illustrative imagery.",
+    "savedPath": "assets/camera-v2.webp",
+    "mode": "built-in image_gen",
+    "illustrative": true,
+    "width": 1536,
+    "height": 1024,
+    "bytes": 244646
+  }
+]

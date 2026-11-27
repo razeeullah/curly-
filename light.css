@@ -1,0 +1,117 @@
+/* Light cinema palette. Color overrides only; layout and motion stay in cinema.css. */
+:root{
+ --bg:#FAF9F6;--bg-2:#F2F0EB;--surface:#EEECE6;
+ --text:#1C1C1C;--text-2:#57554F;--text-3:#68645B;
+ --page-bg:#FAF9F6;--page-text:#1C1C1C;
+ --gold:#896313;--gold-soft:rgba(137,99,19,.09);
+ --line:rgba(28,28,28,.2);--line-2:rgba(28,28,28,.12);
+ color-scheme:light;
+}
+::selection{background:#E4CC91;color:#1C1C1C}
+.skip{background:#1C1C1C;color:#fff}
+.header,.header.is-solid{background:rgba(250,249,246,.97);color:#1C1C1C;border-bottom:1px solid var(--line-2)}
+.header-nav a,.header-cta,.menu-toggle{color:#1C1C1C}
+.header-cta{border-bottom-color:rgba(28,28,28,.4)}
+.header-nav a:hover,.header-nav a[aria-current]{color:var(--gold)}
+.site-menu{background:#FAF9F6;color:#1C1C1C}
+.site-menu-head,.site-menu-foot,.site-menu-nav a{border-color:var(--line)}
+.site-menu-nav a em,.site-menu-foot .label{color:var(--text-2)}
+.section-head .label:first-child,.gold{color:var(--gold)}
+.section-head .label:last-child,.note,.manifesto-kicker,.band-pause,
+.project-title em,.project-idx,.form-note,.mesh-toggle,.motion-credit,.motion-toggle,
+.footer .label,.footer-links a,.footer-links button{color:var(--text-2)}
+.display .quiet,.quiet,.manifesto h2 .quiet{color:#747068}
+.studio-copy>p:not(.label),.expertise-head p,.service-body p,.people-copy p,
+.contact-statement>p,.grade-copy p:not(.label),.step p,
+.project-detail-copy>p:not(.label):not(.note),.brief-success p{color:var(--text-2)}
+.kinetic-band{background:rgba(255,255,255,.3);border-color:var(--line)}
+.project-media,.studio-media,.people-media,.process-photo{background:#E5E2DB}
+.project-open{background:#FAF9F6;color:#1C1C1C}
+.project-tag{color:#fff;background:rgba(8,8,8,.55);padding:5px 8px}
+.projects.is-pan{background:#EEECE6}
+.projects.is-pan .project-info{background:#FAF9F6}
+.gallery-steps button{background:var(--page-bg)}
+.views button[aria-pressed=true]{background:#1C1C1C;border-color:#1C1C1C;color:#FAF9F6}
+.views button:hover,.filters button:hover{color:#1C1C1C}
+.service{border-color:var(--line)}
+.service-arrow{color:#1C1C1C}
+.service[open] .service-arrow{background:#E4CC91;border-color:var(--gold)}
+.service[open] .service-arrow svg{color:#1C1C1C}
+.services-extra li{color:var(--text-2)}
+.step{background:#FFFFFF;border-color:#D7D3CA}
+.step:nth-child(2){background:#F7F5EF}
+.step:nth-child(3){background:#F1EEE6}
+.step:nth-child(4){background:#EAE6DB}
+.step:nth-child(5){background:#E3DDCF}
+.step.active{border-color:#9B782B}
+.process-stages{color:var(--text-2)}
+.process-path path:first-child{stroke:rgba(28,28,28,.2)}
+.process-path #pathDraw{stroke:#896313}
+.process-path circle{fill:#896313}
+.process-label{background:rgba(250,249,246,.95);color:#1C1C1C}
+.split,.split-copy{background:#F2F0EB}
+.split-col:last-child .split-copy:first-child{background:#EEECE6}
+.text-mask{background:#FAF9F6}
+.mask-outline{-webkit-text-stroke-color:rgba(28,28,28,.3)}
+.mask-subtext{color:var(--text-2)}
+.mask-subtext a{color:var(--gold)}
+.role-front{--text:#F2F0EB;--text-2:#D8D5CF;color:#F2F0EB;background:#1C1C1C}
+.role-front .label{color:#E8E5DF}
+.role-back{background:#E7D6AB;color:#1C1C1C}
+.role-back .label,.role-back small{color:#57441D}
+.contact{background:transparent}
+.mesh{background:#FAF9F6;opacity:.65}
+.magnet-dot{background:rgba(137,99,19,.025);border-color:rgba(137,99,19,.35)}
+.field input,.field select,.field textarea{border-bottom-color:rgba(28,28,28,.35);color:#1C1C1C}
+.field select option{background:#FAF9F6;color:#1C1C1C}
+.field label,.field label .opt{color:var(--text-2)}
+.field.has-error input,.field.has-error select,.field.has-error textarea{border-bottom-color:#A63829}
+.field.has-error label,.field-error,.form-note.is-error{color:#A63829}
+.submit{background:#1C1C1C;color:#FAF9F6}
+.submit:hover,.submit.is-sent{background:#896313;color:#fff}
+.form-note.is-success{color:#73500F}
+.brief-success{border-color:var(--gold)}
+.footer{background:#F2F0EB;color:#1C1C1C;border-color:var(--line)}
+.footer-tag{color:#1C1C1C}
+.dock{background:rgba(250,249,246,.96);border-color:var(--line);box-shadow:0 5px 30px rgba(28,28,28,.06)}
+.dock a{color:var(--text-2)}
+.dock a:hover{background:#EEECE6;color:#1C1C1C}
+.dock a[aria-current=location]{background:#1C1C1C;color:#FAF9F6}
+.island{background:rgba(250,249,246,.97);color:#1C1C1C;border-color:rgba(28,28,28,.25);box-shadow:0 5px 30px rgba(28,28,28,.08)}
+.island b,.island-content a{color:#1C1C1C}
+.island-content a{border-color:var(--line)}
+.project-dialog,.player{background:#FAF9F6;color:#1C1C1C}
+.dialog-bar,.project-nav{border-color:var(--line)}
+.project-dialog .btn-ghost,.player .btn-ghost{color:#1C1C1C;border-color:var(--line)}
+.player-error{color:#A63829}
+dialog::backdrop{background:rgba(28,28,28,.4)}
+/* Photographic frames and original black video keep contrasting media controls. */
+.hero-screen,.reel-screen,.intro{
+ --text:#F2F0EB;--text-2:#D8D5CF;--text-3:#BAB6AD;
+ --gold:#D4A017;--line:rgba(242,240,235,.3);--line-2:rgba(242,240,235,.16);
+ color:#F2F0EB;color-scheme:dark;
+}
+.hero,.hero-screen,.chapter-rail{background:#F2F0EB}
+.hero-stage{background:#1C1C1C}
+.hero h1,.hero-reveal p,.hero-frame,.hero-count{color:#F2F0EB}
+.chapter.is-active .chapter-bg img{filter:grayscale(0) brightness(.9)}
+.chapter-num{color:#F1CC71}
+.reel-btn{color:#F2F0EB}
+.reel-btn:hover,.big-play:hover{background:#F2F0EB;color:#1C1C1C}
+.hero-bottom .hero-signature small{color:#C8C4BB}
+.hero-reveal a{color:#F2F0EB}
+.reel{background:#FAF9F6}
+.curtain{background:#FAF9F6;border-color:rgba(137,99,19,.2)}
+.curtain span{color:#1C1C1C}
+.reel-label .label,.reel-caption .label{color:#E8E5DF}
+.reel-caption h2,.big-play{color:#F2F0EB}
+.intro{background:#000}
+.intro .btn-ghost,.intro .btn-txt{color:#F2F0EB}
+.intro .btn-ghost{border-color:rgba(242,240,235,.35)}
+.intro .timecode span{color:#BAB6AD}
+.no-script-film{background:#F2F0EB;color:#1C1C1C}
+.grade-visual{--text:#F2F0EB}
+/* Keep the play control visible against both white curtains and the film still. */
+.big-play{background:#FAF9F6;color:#1C1C1C;border-color:rgba(28,28,28,.45)}
+.big-play:hover{background:#E7D6AB;color:#1C1C1C}
+.reel-ring text{fill:#896313}

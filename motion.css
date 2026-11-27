@@ -1,0 +1,72 @@
+/* Source-derived effects. Jay / RoboLabs, MIT; see ANIMATION_AUDIT.md. */
+.hero-glow{position:absolute;left:0;top:0;width:500px;height:500px;inset:auto;z-index:2;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(212,160,23,.12),transparent 70%);will-change:transform;opacity:0;transition:opacity .3s}
+.hero-screen:hover .hero-glow{opacity:1}
+.project-media{transition:transform .15s ease-out;transform-style:preserve-3d}
+.project-media::after{background:radial-gradient(circle at var(--spot-x,50%) var(--spot-y,50%),rgba(212,160,23,.06),transparent 60%)}
+.ripple-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.magnetic{transition:transform .2s cubic-bezier(.16,1,.3,1)}
+/* 11 Horizontal expansion and staggered detail from accordion-slider.html. */
+.chapter{flex:1;transition:flex .6s cubic-bezier(.16,1,.3,1)}
+.chapter.is-active{flex:5}
+.chapter-bg{transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.chapter.is-active .chapter-bg{transform:scale(1.05)}
+.chapter-num,.chapter-content strong,.chapter-desc{opacity:0;transform:translateY(10px);transition:opacity .4s cubic-bezier(.16,1,.3,1),transform .4s cubic-bezier(.16,1,.3,1)}
+.chapter-num{transition-delay:.1s}.chapter-content strong{transition-delay:.15s}.chapter-desc{transition-delay:.2s}
+.chapter.is-active .chapter-num,.chapter.is-active .chapter-content strong,.chapter.is-active .chapter-desc{opacity:1;transform:none}
+.chapter-collapsed{transition:opacity .3s}.chapter.is-active .chapter-collapsed{opacity:0}
+/* 13 Pool-based trail; JS owns random rotation and delayed fade. */
+.trail-still{position:absolute;width:160px;height:200px;object-fit:cover;pointer-events:none;z-index:1;opacity:0;will-change:transform,opacity}
+.manifesto>*:not(.trail-still){position:relative;z-index:2}
+/* 14 Source 800px perspective / 600ms rotation. */
+.role{perspective:800px}.role-inner{transition:transform .6s cubic-bezier(.16,1,.3,1)}
+@media(hover:hover) and (pointer:fine){.role:hover .role-inner{transform:rotateY(180deg)}}
+/* 15 Source radius and force in JS; these are tiles, not an inert dot texture. */
+.magnet-field{grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(8,1fr);height:320px;opacity:.25}
+.magnet-dot{width:100%;height:100%;border-radius:2px;border:1px solid rgba(212,160,23,.25);background:rgba(212,160,23,.025);transition:transform .4s cubic-bezier(.16,1,.3,1),background .3s,border-color .3s}
+/* 16 Shared border illumination rather than an isolated row highlight. */
+.service::after{content:'';position:absolute;inset:-1px;z-index:-1;pointer-events:none;background:radial-gradient(circle 180px at var(--sx,50%) var(--sy,50%),rgba(212,160,23,.14),transparent);opacity:0;transition:opacity .3s}
+.spotlight-active .service::after,.service:focus-within::after{opacity:1}
+/* 18 Shared-element transition; native API enhances source CSS overlay. */
+::view-transition-group(film){animation-duration:.4s;animation-timing-function:cubic-bezier(.16,1,.3,1)}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.3s}
+.dialog-enter{animation:dialogIn .4s cubic-bezier(.16,1,.3,1) both}
+@keyframes dialogIn{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:none}}
+/* 19 Source trajectories in JS. */
+.particle{position:fixed;width:8px;height:8px;border-radius:50%;background:#D4A017;z-index:120;pointer-events:none;transition:all .6s cubic-bezier(.16,1,.3,1)}
+.particle-ring{position:fixed;width:10px;height:10px;margin-left:-5px;margin-top:-5px;border:2px solid #D4A017;border-radius:50%;z-index:119;pointer-events:none;opacity:0;transition:all .5s cubic-bezier(.16,1,.3,1)}
+.particle-ring.expanded{width:120px;height:120px;margin-left:-60px;margin-top:-60px;opacity:1}
+/* 20 Source mechanical strips, 1500ms / 120ms per digit. */
+.odometer .digit-strip{transition:transform 1.5s cubic-bezier(.16,1,.3,1)}
+/* 24 Character state colors; no animated live region. */
+.scramble-char{display:inline-block;transition:color .1s;white-space:pre}.scramble-char.scrambling{color:var(--text-3)}
+/* 27 Separate scroll rotation and continuous rotation owners. */
+.reel-btn-ring{animation:spin 20s linear infinite;animation-play-state:paused}
+.reel-ring{animation:spin 30s linear infinite;rotate:var(--scroll-angle,0deg);animation-play-state:paused}
+.hero-screen.motion-visible .reel-btn-ring,.reel-screen.motion-visible .reel-ring{animation-play-state:running}
+/* 28 Original slice positions/displacements; one burst replaces endless RGB flashing. */
+#chapterCount{position:relative}
+#chapterCount::before,#chapterCount::after{content:attr(data-glitch);position:absolute;inset:0;opacity:0;pointer-events:none}
+#chapterCount.is-glitching::before{color:#D4A017;opacity:.8;animation:glitchTop .4s steps(2) 1}
+#chapterCount.is-glitching::after{color:#F2F0EB;opacity:.8;animation:glitchBot .4s steps(3) 1}
+@keyframes glitchTop{0%{clip-path:inset(0 0 80% 0);transform:translate(-3px,-2px)}25%{clip-path:inset(20% 0 50% 0);transform:translate(3px,1px)}50%{clip-path:inset(40% 0 30% 0);transform:translate(-2px,2px)}75%{clip-path:inset(60% 0 10% 0);transform:translate(2px,-1px)}100%{clip-path:inset(0 0 80% 0);transform:none}}
+@keyframes glitchBot{0%{clip-path:inset(80% 0 0 0);transform:translate(3px,1px)}33%{clip-path:inset(50% 0 20% 0);transform:translate(-3px,-2px)}66%{clip-path:inset(30% 0 40% 0);transform:translate(2px,2px)}100%{clip-path:inset(80% 0 0 0);transform:none}}
+/* 29 Source 600ms step-end caret. */
+.is-typing::after{content:'';display:inline-block;width:3px;height:1em;background:var(--gold);margin-left:2px;vertical-align:text-bottom;animation:caretBlink .6s step-end infinite}
+@keyframes caretBlink{50%{opacity:0}}
+/* 30 SVG stroke corrects the reference's transparent currentColor stroke bug.
+   The source's 6s linear / 300% traveling gradient is preserved. */
+.gradient-outline{display:block;width:5.2em;height:1.1em;max-width:100%;overflow:visible}
+.gradient-outline text{font-family:var(--sans);font-weight:500;font-size:140px;letter-spacing:-7px;fill:none;stroke:url(#goldStroke);stroke-width:1.5}
+.stroke-flow{animation:strokeFlow 6s linear infinite;animation-play-state:paused}
+@keyframes strokeFlow{to{transform:translateX(300%)}}
+.reel-screen.motion-visible .stroke-flow{animation-play-state:running}
+body.motion-paused .reel-btn-ring,body.motion-paused .reel-ring,body.motion-paused .stroke-flow,body.motion-paused .is-typing::after,
+body.motion-hidden .reel-btn-ring,body.motion-hidden .reel-ring,body.motion-hidden .stroke-flow,body.motion-hidden .is-typing::after{animation-play-state:paused!important}
+@media(max-width:600px){.magnet-field{grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(6,1fr);height:240px}.magnet-dot:nth-child(n+49){display:none}}
+@media(hover:none){.hero-glow{display:none}}
+@media(prefers-reduced-motion:reduce){
+ .hero-glow,.ripple-canvas,.trail-still,.particle,.particle-ring{display:none}
+ .role:hover .role-inner{transform:none}.project-media{transform:none!important}
+ .reel-btn-ring,.reel-ring,.is-typing::after,.stroke-flow{animation:none!important}
+ .role[aria-pressed=true] .role-inner{transform:none}.role[aria-pressed=true] .role-front{visibility:hidden}.role[aria-pressed=true] .role-back{transform:none}
+}

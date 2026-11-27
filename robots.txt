@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin.html
+Disallow: /api/
+Disallow: /.admin-state/
+Disallow: /tools/
+Disallow: /archive/
+Sitemap: https://skfilmsproductions.com/sitemap.xml

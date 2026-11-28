@@ -48,3 +48,7 @@ No Search Console account, analytics access or production hosting was supplied. 
 - [Google technical requirements](https://developers.google.com/search/docs/essentials/technical): public crawl/index prerequisites.
 - [Google structured-data policies](https://developers.google.com/search/docs/appearance/structured-data/sd-policies): markup must represent visible, accurate content.
 - [Google LocalBusiness guidance](https://developers.google.com/search/docs/appearance/structured-data/local-business): use verified business details; detailed local-business markup remains deferred until addresses are approved.
+
+## Netlify online publishing
+
+The online dashboard renders portfolio/article content, canonical metadata, robots and sitemap from persistent Blobs content on each request. Publishing/unpublishing is immediate without a rebuild. Local Python saves do not synchronize to that store. Domain/DNS, Search Console ownership and live crawl/indexing checks remain deployment tasks; see NETLIFY.md.

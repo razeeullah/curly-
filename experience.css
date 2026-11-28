@@ -72,9 +72,11 @@
 .project-detail-copy>.note{font-size:12px!important}
 .project-nav{grid-column:1 / -1;width:100%;margin-top:20px;padding-top:20px}
 /* The Studio is a continuous editorial story, not the process card stack. */
-.manifesto{isolation:auto;padding-top:100px;padding-bottom:100px}
-.motion-trail{position:relative}.work-head>*{position:relative;z-index:2}
-.trail-still{position:fixed;z-index:1;width:160px;height:200px}
+.manifesto{padding-top:100px;padding-bottom:100px}
+.motion-trail{position:relative;isolation:isolate}.work-head>:not(.trail-layer){position:relative;z-index:2}
+.trail-layer{position:absolute;inset:0;overflow:hidden;overflow:clip;pointer-events:none;z-index:1}
+.trail-layer .trail-still{position:absolute;z-index:0;width:160px;height:200px}
+.manifesto>.trail-layer{position:absolute;z-index:1}
 .manifesto-grid{padding:72px 0;grid-template-columns:2fr 10fr;gap:6%}
 .manifesto h2{font-size:clamp(48px,7vw,126px);font-weight:400;line-height:1.02}
 .manifesto-kicker{font-size:14px;line-height:1.6}
@@ -227,7 +229,8 @@ body:not(.has-motion) .narrative-visual{position:relative;top:auto}
 .projects .project.is-hidden{display:none!important}
 .views button[aria-pressed=true]:hover{color:#FAF9F6}
 @media(max-width:760px){.magnet-dot:nth-child(n+49){display:none}}
-.scramble-word{white-space:nowrap}.scramble-space{white-space:pre}
+.scramble-word{position:relative;display:inline-block;white-space:nowrap}.scramble-space{white-space:pre}
+.scramble-original{visibility:hidden}.scramble-word .scramble-char{position:absolute;top:0;overflow:hidden;text-align:center}
 @media(max-width:760px){.work,.studio,.expertise,.people,.process,.contact,.about{padding-top:88px}}
 /* Opening composition: a clear masthead, image stage, and shared control row. */
 .hero-screen{--hero-image-top:clamp(290px,36svh,400px);background:#FAF9F6;color:#1C1C1C;min-height:720px}

@@ -1,6 +1,10 @@
 # SK Films content editor
 
-## Start and sign in
+## Online Netlify dashboard
+
+The selected production admin uses Netlify Functions and Blobs. Deploy through Git or CLI, configure `SK_ADMIN_PASSWORD` (at least 16 characters) in the Functions environment, redeploy and open `/admin.html`. See [NETLIFY.md](NETLIFY.md) for setup, storage, backups and verification limits. Saves update online pages immediately. The optional local Python editor below writes local files and does not synchronize with the online store.
+
+## Local start and sign in
 
 From the project directory, run:
 
@@ -14,7 +18,7 @@ The admin server binds only to **127.0.0.1**. This is a local authoring tool, no
 
 ## Portfolio
 
-Select a project to edit its title, discipline, category, description, accessible image description and focal point. Choose an existing image or upload JPEG/PNG/WebP up to4MB. Add, reorder or delete entries, then **Save changes**. At least one project is retained. The editor updates the shared collection used by Grid, List, Cinema, Archive and Filmstrip and its matching detail data.
+Select a project to edit its title, discipline, category, description, accessible image description and focal point. Choose Ads production, TV commercials, TV drama, Film production, Music videos or Visual craft as the gallery category. Choose an existing image or upload JPEG/PNG/WebP up to4MB. Add, reorder or delete entries, then **Save changes**. At least one project is retained. The editor updates the shared collection used by Grid, List, Cinema, Archive and Filmstrip and its matching detail data.
 
 Keep “illustrative concept imagery” selected for concepts; uncheck it only for approved actual work. The four illustrative opening-selector frames and official ident are intentionally separate from the editable portfolio. New portfolio entries do not invent new intro footage.
 
@@ -51,7 +55,7 @@ python3 tools/export_site.py
 
 Upload the contents of **archive/public-site.zip** to the chosen static host. The package includes public HTML, styles/scripts, media, font/dependency licenses, published content, robots and sitemap. It excludes the admin app/server, passwords, drafts, source tools, test evidence and historical archives.
 
-Saving in the local editor updates local files. It does **not** upload them to a host. After changes, export and deploy the new package. The owner has supplied a domain, but not the hosting provider/access; no remote admin, DNS change or production deployment is claimed.
+Saving in the local editor updates local files. It does **not** upload them to a host. After changes, export and deploy the new package. The owner selected Netlify with an online admin; deploy using NETLIFY.md instead of this static-only export when online editing is required. No DNS change or production deployment is claimed.
 
 ## Verification
 

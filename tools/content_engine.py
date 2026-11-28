@@ -25,7 +25,7 @@ def validate(raw,root):
         ids.add(i);src=text(p.get('src'),250,True)
         path=(root/src).resolve()
         if not src.startswith('assets/') or not path.is_relative_to((root/'assets').resolve()) or path.suffix.lower() not in ['.webp','.jpg','.jpeg','.png'] or not path.is_file():raise Invalid('Choose an existing image in assets/')
-        if p.get('category') not in ['film','commercial','visual']:raise Invalid('Choose a valid category')
+        if p.get('category') not in ['film', 'commercial', 'drama', 'ads', 'music', 'visual']:raise Invalid('Choose a valid category')
         crop=text(p.get('crop','50% 50%'),40)
         if not re.fullmatch(r'(?:100|\d{1,2})(?:\.\d+)?% (?:100|\d{1,2})(?:\.\d+)?%',crop):raise Invalid('Crop must be two percentages, for example 50% 50%')
         if type(p.get('illustrative'))!=bool:raise Invalid('Set whether the image is illustrative')
@@ -85,7 +85,8 @@ def build(state,root):
         cards+=f'''<button type="button" class="project" data-category="{p['category']}" data-project="{p['id']}" style="--crop:{p['crop']}"><span class="project-media"><img src="{e(p['src'])}" alt="{e(p['alt'],quote=True)}" loading="lazy" decoding="async"><span class="project-tag label">{label}</span><span class="project-open" aria-hidden="true"><svg><use href="#i-arrow-ne"/></svg></span></span><span class="project-info"><span class="project-title"><strong>{e(p['title'])}</strong><em>{e(p['type'])}</em></span><span class="label project-idx">{n:02}</span></span></button>\n'''
     index,count=re.subn(r'(<div class="projects"[^>]*>)[\s\S]*?(</div>\s*(?:<p class="gallery-empty"[\s\S]*?</p>\s*)?<div class="gallery-progress")',lambda m:m[1]+'\n'+cards+m[2],index,count=1)
     if count!=1:raise Invalid('Portfolio publishing anchor missing; restore the gallery markup before saving')
-    index=re.sub(r'(<span id="filterCount">).*?(</span>)',lambda m:m[1]+f'{len(projects):02}'+m[2],index)
+    index=re.sub(r'(<(?:span|sup) id="filterCount">).*?(</(?:span|sup)>)',lambda m:m[1]+f'{len(projects):02}'+m[2],index)
+    index=re.sub(r'(<span class="odometer" id="odometer"[^>]*aria-label=")[^"]*(">)[\s\S]*?(</span>)',lambda m:m[1]+f'{len(projects)} portfolio projects'+m[2]+f'{len(projects):02}'+m[3],index,count=1)
     index=index.replace('Four frames. Different ways of seeing.','Different frames. Different ways of seeing.')
     note='Collection includes illustrative studies; these are marked as concepts.' if any(p['illustrative'] for p in projects) else 'Explore our film and visual production work.'
     index=re.sub(r'(<p class="note">)(?:Concept collection\.[\s\S]*?credits to follow\.|Collection includes illustrative studies; these are marked as concepts\.|Explore our film and visual production work\.)(</p>)',lambda m:m[1]+note+m[2],index,count=1)

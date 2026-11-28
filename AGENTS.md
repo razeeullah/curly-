@@ -6,6 +6,7 @@
 - Keep the screenshot’s seven named categories first and in the same order, with visible short descriptions. The homepage retains five older offerings under Supporting craft.
 - `services.html` and `services.css` provide the dedicated, static seven-service page. Do not load homepage-only scripts on this standalone page.
 - The user explicitly requested admin, Insights/blog, Maps and advanced SEO. `admin_server.py` is the local-only authenticated editor; `tools/content_engine.py` validates and publishes static pages. Private state/password/drafts live in `.admin-state/`; never expose or package this directory. `tools/export_site.py` exports only the public site. `ADMIN.md` documents local vs production limits.
+- Netlify is the selected public host and the user explicitly requested an online admin. `npm run build` packages only public files into `dist/`; Node Functions in `netlify/functions/` use `lib/online-content.mjs` and `lib/online-render.mjs` with Netlify Blobs. `SK_ADMIN_PASSWORD` (16+ characters) must be configured privately in the Functions environment. Production uses a stable site-wide store; previews are isolated. Never publish the workspace root or private editor state. Python remains optional local authoring and does not sync online edits. See `NETLIFY.md`; Drop alone does not deploy Functions.
 - Preserve existing features; do not add a framework, backend, CMS or routes without a task requiring them.
 - Git was initialized for GitHub submission after the original audit. Historical snapshots and browser evidence are preserved locally in `archive/project-history.zip` (original folder paths retained inside).
 
@@ -25,11 +26,13 @@
 
 ## Section ownership
 - Keep the collection immediately after the opening. Studio/About uses four natural-flow `.narrative-feature` triggers and matching `.narrative-state` images. The five `.step` process cards have independent sticky-card triggers and the original curved SVG route. Do not couple these two stories.
+- Portfolio category IDs are `ads`, `commercial`, `drama`, `film`, `music`, `visual`; keep local/Netlify validators and admin options aligned with public filters. The seed collection contains10 illustrative entries, not verified production credits.
 - Keep portfolio filters synchronous. Use the optional native shared-image transition for project details, with the source overlay as fallback. Clean up active transitions and filmstrip triggers when modes change.
 
 ## Motion and accessibility
 - The user requested a slower Story/Light/Movement/Feeling marquee. Keep its base speed40px/s, scroll boost capped at12px/s and velocity decay; this overrides the original fast marquee parameters.
 - The user explicitly removed hero zoom. Keep the hero in normal document flow, with no layered zoom ScrollTriggers or long sticky scroll runway. This overrides the reference-fidelity requirement for Zoom Parallax.
+- Image trails belong to clipped section-local layers behind text, never body-level fixed overlays. Keep the shared20-item pool and original threshold/fade timing. Scramble glyphs must reserve the original proportional text width so decoding never moves the layout.
 - One owner per transform; nest wrappers when combining scroll/cursor/entry motion.
 - Use scoped GSAP contexts and clean up listeners, observers, timers and frames. Re-measure after assets load, gallery changes and viewport changes.
 - Essential content works without GSAP. Reduced motion uses readable static layouts and immediate state changes. Touch gets explicit controls. No autoplay audio or hover-only essential content.
@@ -41,3 +44,6 @@
 - Test source demos and integrated intermediate motion states. Keep recordings/screenshots and machine-readable results under `output/playwright/`.
 - Responsive widths: 1920, 1440, 1280, 1024, 768, 430, 390, 360, 320. Test filters + all five gallery views, dialogs, intro/replay/sound, menu/island, grading and brief export.
 - Check console errors, asset failures, overflow, reduced motion, dependency failure and media failure. Never mark untested behavior as verified.
+
+## Online admin verification
+- Run `npm run build && npm test`. Keep browser tests isolated using the test-only HTTPS/in-memory adapter; never publish test material into real content. Verify live Netlify routing/storage after account deployment before claiming cloud readiness.

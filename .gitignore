@@ -12,3 +12,4 @@ archive/*.zip
 node_modules/
 .venv/
 *.log
+dist/

@@ -153,20 +153,40 @@
   on(grade,'pointerup',() => {comparing=false;});on(grade,'pointercancel',() => {comparing=false;});
   setGrade(50);
 
-  // 13 Image trail — source pool=20, threshold=60, random rotations and delayed 800ms fade.
-  const trailAreas=$$('.motion-trail'); let pool=[],trailIndex=0,lastX=0,lastY=0;
-  function ensureTrail(){
-    if(pool.length && pool[0].isConnected)return;
-    pool=Array.from({length:20},(_,i)=>{const el=document.createElement('img');el.className='trail-still';el.alt='';el.setAttribute('aria-hidden','true');el.src='assets/'+['story-v2.webp','landscape-v2.webp','camera-v2.webp','portrait-v2.webp','hero-v2.webp','stage-v2.webp'][i%6];body.append(el);return el;});
+  // 13 Source pool=20, threshold=60, random rotation, 300ms hold / 800ms fade.
+  // Keep the pool inside a clipped section layer, below its editorial content.
+  const trailAreas=$$('.motion-trail'); let pool=[],trailIndex=0,trailOwner=null;
+  function clearTrail(){pool.forEach(el=>{el.style.transition='none';el.style.opacity='0';});}
+  function ensureTrail(layer){
+    if(!pool.length || !pool[0].isConnected){
+      pool=Array.from({length:20},(_,i)=>{const el=document.createElement('img');el.className='trail-still';el.alt='';el.setAttribute('aria-hidden','true');el.src='assets/'+['story-v2.webp','landscape-v2.webp','camera-v2.webp','portrait-v2.webp','hero-v2.webp','stage-v2.webp'][i%6];return el;});
+      trailOwner=null;
+    }
+    if(trailOwner!==layer){clearTrail();layer.append(...pool);trailOwner=layer;}
   }
-  function spawnTrail(x,y){
-    if(reduce.matches)return;ensureTrail();const el=pool[trailIndex++%20];
+  function spawnTrail(layer,x,y){
+    if(reduce.matches||globallyPaused||document.hidden)return;ensureTrail(layer);const el=pool[trailIndex++%20];
     el.style.left=x-80+'px';el.style.top=y-100+'px';
     el.style.transition='none';el.style.opacity='.85';el.style.transform=`scale(.8) rotate(${Math.random()*20-10}deg)`;void el.offsetHeight;
     el.style.transition='opacity .8s ease .3s, transform .8s ease';el.style.opacity='0';el.style.transform=`scale(.6) rotate(${Math.random()*30-15}deg)`;
   }
-  trailAreas.forEach(trail=>{on(trail,'pointermove',e=>{if(!fine.matches||reduce.matches)return;if(Math.hypot(e.clientX-lastX,e.clientY-lastY)>60){lastX=e.clientX;lastY=e.clientY;spawnTrail(lastX,lastY);}});
-  on(trail,'pointerdown',e=>{if(e.pointerType==='touch')spawnTrail(e.clientX,e.clientY);});});
+  trailAreas.forEach(trail=>{
+    const layer=document.createElement('div');layer.className='trail-layer';layer.setAttribute('aria-hidden','true');trail.prepend(layer);
+    let point=null;
+    on(trail,'pointerenter',e=>{point={x:e.clientX,y:e.clientY};});
+    on(trail,'pointerleave',()=>{point=null;});
+    on(trail,'pointermove',e=>{
+      if(!fine.matches||e.pointerType!=='mouse'||reduce.matches||globallyPaused)return;
+      if(!point){point={x:e.clientX,y:e.clientY};return;}
+      if(Math.hypot(e.clientX-point.x,e.clientY-point.y)>60){
+        point={x:e.clientX,y:e.clientY};const r=layer.getBoundingClientRect();spawnTrail(layer,e.clientX-r.left,e.clientY-r.top);
+      }
+    },{passive:true});
+    on(trail,'pointerdown',e=>{if(e.pointerType==='touch'){const r=layer.getBoundingClientRect();spawnTrail(layer,e.clientX-r.left,e.clientY-r.top);}});
+    cleanup.push(()=>layer.remove());
+  });
+  on(motionToggle,'click',()=>{if(globallyPaused)clearTrail();});
+  on(document,'visibilitychange',()=>{if(document.hidden)clearTrail();});
   cleanup.push(()=>pool.forEach(el=>el.remove()));
 
   // 14 Native button semantics + source perspective, hover and persistent tap states.
@@ -240,14 +260,24 @@
     const text=el.textContent,chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*';
     const view=document.createElement('span');view.setAttribute('aria-hidden','true');
     el.setAttribute('aria-label',text);el.replaceChildren(view);
+    const glyphs=[];let index=0;
+    text.split(/(\s+)/).filter(Boolean).forEach(word=>{
+      const group=document.createElement('span');group.className=/^\s+$/.test(word)?'scramble-space':'scramble-word';
+      if(/^\s+$/.test(word)){group.textContent=word;index+=word.length;}
+      else{
+        // The real word reserves its proportional-font width throughout decoding.
+        const original=document.createElement('span');original.className='scramble-original';original.textContent=word;group.append(original);
+        [...word].forEach((c,n)=>{const glyph=document.createElement('span');glyph.className='scramble-char scrambling';group.append(glyph);glyphs.push({glyph,original,n,c,index:index++});});
+      }
+      view.append(group);
+    });
+    function measure(){if(!view.isConnected)return;glyphs.forEach(({glyph,original,n})=>{const range=document.createRange();range.setStart(original.firstChild,n);range.setEnd(original.firstChild,n+1);const r=range.getBoundingClientRect(),base=original.getBoundingClientRect();glyph.style.left=r.left-base.left+'px';glyph.style.width=r.width+'px';});}
+    measure();on(window,'resize',measure);document.fonts?.ready.then(()=>{if(!destroyed)measure();});
     let start=null;
     function draw(t){if(destroyed)return;if(start===null)start=t;const p=reduce.matches?1:Math.min((t-start)/1200,1);
-      let i=0;
-      view.replaceChildren(...text.split(/(\s+)/).filter(Boolean).map(word=>{
-        const group=document.createElement('span');group.className=/^\s+$/.test(word)?'scramble-space':'scramble-word';
-        [...word].forEach(c=>{const span=document.createElement('span');const resolved=p>=i/text.length*.7+.15;i++;span.className='scramble-char '+(resolved?'resolved':'scrambling');span.textContent=c===' '?' ':resolved?c:chars[Math.floor(Math.random()*chars.length)];group.append(span);});return group;
-      }));
+      glyphs.forEach(({glyph,c,index})=>{const resolved=p>=index/text.length*.7+.15;glyph.classList.toggle('resolved',resolved);glyph.classList.toggle('scrambling',!resolved);glyph.textContent=resolved?c:chars[Math.floor(Math.random()*chars.length)];});
       if(p<1)scrambleFrame=requestAnimationFrame(draw);
+      else{el.textContent=text;}
     }
     scrambleFrame=requestAnimationFrame(draw);
   }

@@ -1,21 +1,10 @@
 {
   "projects": [
     {
-      "id": 1,
-      "title": "Behind the frame",
-      "type": "Brand film",
-      "category": "commercial",
-      "src": "assets/hero-v2.webp",
-      "alt": "AI-generated illustrative cinema camera and crew on a warmly lit soundstage",
-      "crop": "52% 45%",
-      "copy": "A production-led visual concept emphasising the craft behind commercial storytelling \u2014 the set, the light and the people who build the frame.",
-      "illustrative": true
-    },
-    {
       "id": 0,
       "title": "The human story",
-      "type": "Film & drama",
-      "category": "film",
+      "type": "TV drama",
+      "category": "drama",
       "src": "assets/portrait-v2.webp",
       "alt": "AI-generated illustrative portrait of a fictional actor in soft window light",
       "crop": "58% 42%",
@@ -42,6 +31,83 @@
       "alt": "AI-generated illustrative crew filming an interior soundstage scene",
       "crop": "48% 45%",
       "copy": "A behind-the-scenes concept centred on collaboration and the filmmaking process, from the first mark on the floor to the final take.",
+      "illustrative": true
+    },
+    {
+      "id": 1,
+      "title": "Behind the frame",
+      "type": "TV commercial",
+      "category": "commercial",
+      "src": "assets/landscape-v2.webp",
+      "alt": "AI-generated illustrative cinema camera and crew on a warmly lit soundstage",
+      "crop": "52% 45%",
+      "copy": "A production-led visual concept emphasising the craft behind commercial storytelling \u2014 the set, the light and the people who build the frame.",
+      "illustrative": true
+    },
+    {
+      "id": 4,
+      "title": "A brand in motion",
+      "type": "Ads production",
+      "category": "ads",
+      "src": "assets/hero-v2.webp",
+      "alt": "AI-generated illustrative production scene with warm cinematic lighting",
+      "crop": "52% 50%",
+      "copy": "An illustrative advertising concept exploring a clear visual idea, confident pacing and a memorable final frame. Placeholder work for the ads production collection.",
+      "illustrative": true
+    },
+    {
+      "id": 5,
+      "title": "The everyday, reimagined",
+      "type": "TV commercial",
+      "category": "commercial",
+      "src": "assets/camera-v2.webp",
+      "alt": "AI-generated illustrative cinema camera and crew on a warmly lit soundstage",
+      "crop": "50% 50%",
+      "copy": "An illustrative television commercial concept built around an everyday moment, expressive lighting and a concise visual narrative. No client or broadcast credit is claimed.",
+      "illustrative": true
+    },
+    {
+      "id": 6,
+      "title": "Between the lines",
+      "type": "TV drama",
+      "category": "drama",
+      "src": "assets/story-v2.webp",
+      "alt": "AI-generated illustrative dramatic scene with cinematic lighting",
+      "crop": "45% 50%",
+      "copy": "An illustrative television drama concept focused on character, atmosphere and the tension between what is said and what is felt. A placeholder for approved drama work.",
+      "illustrative": true
+    },
+    {
+      "id": 7,
+      "title": "A journey in light",
+      "type": "Film production",
+      "category": "film",
+      "src": "assets/landscape-v2.webp",
+      "alt": "AI-generated illustrative traveler on a rocky ridge before snowy mountains",
+      "crop": "62% 42%",
+      "copy": "An illustrative film production concept exploring a journey through landscape, light and human perspective. A placeholder for an approved film, not a released production credit.",
+      "illustrative": true
+    },
+    {
+      "id": 8,
+      "title": "Built to be remembered",
+      "type": "Digital advertising",
+      "category": "ads",
+      "src": "assets/stage-v2.webp",
+      "alt": "AI-generated illustrative crew filming an interior soundstage scene",
+      "crop": "65% 50%",
+      "copy": "An illustrative campaign concept for short-form digital advertising, combining production craft with a strong opening image and a concise brand story. No real brand partnership is implied.",
+      "illustrative": true
+    },
+    {
+      "id": 9,
+      "title": "Rhythm in the frame",
+      "type": "Music video production",
+      "category": "music",
+      "src": "assets/portrait-v2.webp",
+      "alt": "AI-generated illustrative portrait of a fictional performer in soft window light",
+      "crop": "58% 42%",
+      "copy": "An illustrative music video concept exploring performance, rhythm and expressive portraiture. Placeholder imagery for future approved artist work; no artist credit is claimed.",
       "illustrative": true
     }
   ],

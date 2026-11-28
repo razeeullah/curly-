@@ -38,7 +38,7 @@ class ContentTests(unittest.TestCase):
             self.assertEqual(self.req(path)[0],404,path);self.assertEqual(self.req(path,'HEAD')[0],404,path)
     def test_02_project_persistence_and_rebuild(self):
         self.login();data=self.current();project=copy.deepcopy(data['projects'][0]);project.update(id=99,title='Added <script>test</script>');data['projects'].append(project);data=self.save(data)
-        self.assertEqual(len(self.current()['projects']),5)
+        self.assertEqual(len(self.current()['projects']),len(self.initial['projects'])+1)
         self.assertIn('Added &lt;script&gt;test&lt;/script&gt;', (self.root/'index.html').read_text())
         self.assertIn('"99":', (self.root/'script.js').read_text())
         data['projects'][-1]['title']='Edited project';data=self.save(data)
@@ -76,7 +76,7 @@ class ContentTests(unittest.TestCase):
             clone=Path(temp);shutil.copytree(self.root/'assets',clone/'assets');(clone/'content').mkdir();shutil.copy2(self.root/'content/public.json',clone/'content/public.json')
             self.assertTrue(app.initialize_content(clone))
             restored=json.loads((clone/'.admin-state/content.json').read_text())
-            self.assertEqual(len(restored['projects']),4);self.assertTrue(all(p['published'] for p in restored['posts']))
+            self.assertEqual(len(restored['projects']),len(self.initial['projects']));self.assertTrue(all(p['published'] for p in restored['posts']))
             self.assertFalse(app.initialize_content(clone))
     def test_05_approved_map_and_seo(self):
         self.login();data=self.current();office=data['settings']['offices'][0];office.update(address='Approved test address',mapUrl='https://www.google.com/maps?q=test',embedUrl='https://www.google.com/maps/embed?pb=test',approved=True);self.save(data)

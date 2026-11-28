@@ -185,7 +185,7 @@
  .studio-grid{grid-template-columns:1fr 1fr;gap:40px}.studio-copy h2{font-size:9vw}.studio-copy>p:not(.label){font-size:16px}
  .about-heading{grid-template-columns:1fr;gap:28px;margin:48px 0}.about-heading h2{font-size:11vw}
  .narrative-stack{display:block}.narrative-visual{display:none}.narrative-features{padding:0;gap:48px}.narrative-feature{opacity:1;transform:none;min-height:0;padding:24px 0}.narrative-frame{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;margin-bottom:28px}.narrative-feature h3{font-size:48px;max-width:14ch}.narrative-feature>p{max-width:45ch}
- .has-motion .split{height:auto}.split-sticky{display:grid;grid-template-columns:1fr 1fr;position:relative;height:auto}.split-track{position:relative;transform:none!important}.split-track--copy{display:flex;flex-direction:column-reverse}.split-cell{height:440px}.split-copy{padding:28px}.split-copy h3{font-size:42px}.split-copy>p{font-size:15px}
+ .has-motion .split{height:auto}.split-sticky{display:grid;grid-template-columns:1fr 1fr;position:relative;height:auto}.split-track{position:relative;transform:none}.split-track--copy{display:flex;flex-direction:column-reverse}.split-cell{height:440px}.split-copy{padding:28px}.split-copy h3{font-size:42px}.split-copy>p{font-size:15px}
  .expertise-head{grid-template-columns:1fr;gap:28px}.expertise-head h2{font-size:11vw}.expertise-head p{max-width:45ch}.service-body{padding-left:44px}
  .people-grid{grid-template-columns:1fr;gap:40px}.people-copy h2{font-size:10vw}.people-copy p{max-width:45ch}.roles{grid-template-columns:repeat(3,1fr);gap:12px}.role{height:300px}.role-face{padding:24px}.role-front strong{font-size:24px}.role-text{font-size:16px}
  .process-track{display:block}.process-visual{position:sticky;top:var(--header-h);z-index:6;background:var(--page-bg);display:flex;align-items:center;gap:24px;padding:8px 0;margin-bottom:24px}.process-photo{width:90px;height:64px;flex:none}.process-photo .process-label{display:none}.process-path{width:64px;height:64px;flex:none;margin:0}.process-stages{font-size:11px;max-width:34ch;margin:0}.process-steps{padding-bottom:40px}.step{min-height:360px;top:160px}.step-copy{min-height:360px}.step:nth-child(2){top:176px}.step:nth-child(3){top:192px}.step:nth-child(4){top:208px}.step:nth-child(5){top:224px}
@@ -220,7 +220,7 @@
 @media(max-height:599px){.process-visual{position:relative;top:auto}.step,.step:nth-child(n){position:relative;top:auto;transform:none!important;opacity:1!important}.narrative-visual{top:88px}.narrative-image{height:65svh}}
 @media(prefers-reduced-motion:reduce){
  .narrative-feature{opacity:1;transform:none}.narrative-visual{position:relative;top:auto}.narrative-state{transition:none}
- .has-motion .split,.has-motion .text-mask,.has-motion .reel{height:auto}.split-sticky{position:relative;height:auto}.split-track{position:relative;transform:none!important}.split-cell{height:60svh}
+ .has-motion .split,.has-motion .text-mask,.has-motion .reel{height:auto}.split-sticky{position:relative;height:auto}.split-track{position:relative;transform:none}.split-cell{height:60svh}
  .step,.step:nth-child(n){position:relative;top:auto;transform:none!important;opacity:1!important}.process-visual{position:relative;top:auto}
  .project-dialog.dialog-enter{animation:none}.projects.is-cover .project{transition:none}
 }
@@ -296,3 +296,34 @@ body:not(.has-motion) .narrative-visual{position:relative;top:auto}
 .project-media img,.people-media img{filter:none}
 .chapter.is-active .chapter-bg img{filter:grayscale(0) brightness(1)}
 img[src$="portrait-v2.webp"]{object-position:58% 42%}
+
+/* Split-scroll: one viewport stage, with measurable pane heights on every device. */
+.split.is-scroll-split{--split-top:0px;--split-stage:100svh;height:calc(var(--split-stage)*4);overflow:visible}
+.split.is-scroll-split .split-sticky{position:sticky;top:var(--split-top);height:var(--split-stage);display:flex;flex-direction:row;overflow:hidden}
+.split.is-scroll-split .split-col{flex:none;width:50%;height:100%;min-width:0;overflow:hidden}
+.split.is-scroll-split .split-track{position:absolute;inset:0 0 auto;display:block}
+.split.is-scroll-split .split-cell{height:var(--split-stage);min-height:0}
+.split:not(.is-scroll-split) .split-col{width:100%;min-width:0}
+@media(max-width:900px){
+ .split.is-scroll-split{--split-top:var(--header-h);--split-stage:calc(100svh - var(--split-top))}
+ .split.is-scroll-split .split-copy{padding:24px;gap:16px}
+ .split.is-scroll-split .split-copy h3{font-size:clamp(28px,5vw,42px)}
+ .split.is-scroll-split .split-copy>p{font-size:15px;line-height:1.5;max-width:36ch}
+ .split.is-scroll-split .split-copy .label{font-size:9px;line-height:1.4}
+}
+@media(max-width:760px){
+ .split.is-scroll-split .split-sticky{flex-direction:column}
+ .split.is-scroll-split .split-col{width:100%;height:54%}
+ .split.is-scroll-split .split-col:last-child{height:46%}
+ .split.is-scroll-split .split-track--media .split-cell{height:calc(var(--split-stage)*.54)}
+ .split.is-scroll-split .split-track--copy .split-cell{height:calc(var(--split-stage)*.46)}
+ .split.is-scroll-split .split-copy{padding:18px 24px;gap:12px}
+ .split.is-scroll-split .split-copy h3{font-size:clamp(28px,8vw,40px)}
+ .split.is-scroll-split .split-copy>p{font-size:14px;line-height:1.45}
+ .split.is-scroll-split .split-frame-label{left:20px;bottom:16px}
+}
+@media(max-width:900px) and (max-height:599px){
+ .split.is-scroll-split .split-copy{padding:16px;gap:10px}
+ .split.is-scroll-split .split-copy h3{font-size:28px}
+ .split.is-scroll-split .split-copy>p{font-size:13px}
+}

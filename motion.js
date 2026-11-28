@@ -412,9 +412,10 @@
       gsap.fromTo(path,{strokeDasharray:len,strokeDashoffset:len},{strokeDashoffset:0,ease:'none',scrollTrigger:{trigger:'#processTrack',start:'top top',end:'bottom bottom',scrub:.3,onUpdate:self=>activateStage(Math.min(4,Math.floor(self.progress*5)))}});
       $$('.process-milestone').forEach((c,i)=>gsap.fromTo(c,{opacity:.2},{opacity:1,duration:.5,scrollTrigger:{trigger:'#processTrack',start:(15+i*20)+'% top',end:(22+i*20)+'% top',scrub:true}}));
       // 08 Opposite tracks with measured item height and source .3 scrub.
-      if(desktop){const split=$('.split'),left=$('.split-track--media'),right=$('.split-track--copy');
-        gsap.fromTo(left,{y:0},{y:()=>-($('.split-cell',left).offsetHeight*($$('.split-cell',left).length-1)),ease:'none',scrollTrigger:{trigger:split,start:'top top',end:'bottom bottom',scrub:.3,invalidateOnRefresh:true}});
-        gsap.fromTo(right,{y:()=>-($('.split-cell',right).offsetHeight*($$('.split-cell',right).length-1))},{y:0,ease:'none',scrollTrigger:{trigger:split,start:'top top',end:'bottom bottom',scrub:.3,invalidateOnRefresh:true}});
+      const split=$('.split'),left=$('.split-track--media'),right=$('.split-track--copy');
+      if(split){split.classList.add('is-scroll-split');
+        gsap.fromTo(left,{y:0},{y:()=>-($('.split-cell',left).getBoundingClientRect().height*($$('.split-cell',left).length-1)),ease:'none',scrollTrigger:{trigger:split,start:()=>`top top+=${parseFloat(getComputedStyle($('.split-sticky',split)).top)||0}`,end:'bottom bottom',scrub:.3,invalidateOnRefresh:true}});
+        gsap.fromTo(right,{y:()=>-($('.split-cell',right).getBoundingClientRect().height*($$('.split-cell',right).length-1))},{y:0,ease:'none',scrollTrigger:{trigger:split,start:()=>`top top+=${parseFloat(getComputedStyle($('.split-sticky',split)).top)||0}`,end:'bottom bottom',scrub:.3,invalidateOnRefresh:true}});
       }
       ST.create({onUpdate:self=>{velocity=Math.abs(self.getVelocity());}});
       // 09 Source enter/enterBack palette sequencing and 800ms CSS interpolation.
@@ -433,7 +434,7 @@
       let angle=0;
       ST.create({onUpdate:self=>{angle+=self.getVelocity()*.02;$('.reel-ring').style.setProperty('--scroll-angle',angle+'deg');}});
       buildStrip();
-      return()=>{stripTween?.scrollTrigger?.kill();stripTween?.kill();stripTween=null;root.style.removeProperty('--page-bg');root.style.removeProperty('--page-text');};
+      return()=>{split?.classList.remove('is-scroll-split');stripTween?.scrollTrigger?.kill();stripTween?.kill();stripTween=null;root.style.removeProperty('--page-bg');root.style.removeProperty('--page-text');};
     });
   }
 

@@ -33,6 +33,7 @@
 - The user requested a slower Story/Light/Movement/Feeling marquee. Keep its base speed40px/s, scroll boost capped at12px/s and velocity decay; this overrides the original fast marquee parameters.
 - The user explicitly removed hero zoom. Keep the hero in normal document flow, with no layered zoom ScrollTriggers or long sticky scroll runway. This overrides the reference-fidelity requirement for Zoom Parallax.
 - Image trails belong to clipped section-local layers behind text, never body-level fixed overlays. Keep the shared20-item pool and original threshold/fade timing. Scramble glyphs must reserve the original proportional text width so decoding never moves the layout.
+- Perspective split-scroll animates at every motion-enabled width using `.is-scroll-split`; phones use full-width upper/lower panes and measured cell heights. Keep legacy breakpoint resets from overriding GSAP transforms. Reduced motion and dependency failure retain readable paired scenes.
 - One owner per transform; nest wrappers when combining scroll/cursor/entry motion.
 - Use scoped GSAP contexts and clean up listeners, observers, timers and frames. Re-measure after assets load, gallery changes and viewport changes.
 - Essential content works without GSAP. Reduced motion uses readable static layouts and immediate state changes. Touch gets explicit controls. No autoplay audio or hover-only essential content.
